@@ -1,12 +1,55 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+    <title>Riddle Me This...</title>
+    <link rel="stylesheet" href="assets/css/foundation.css">
+  </head>
 <body>
-    
+  <!-- typography -->
+  <div class="row">
+     <h1 class="header">Riddle Me This...</h1>   
+  </div>
+<hr>
+  <div id="topics">
+      <label>Select a topic</label>
+        <select>
+            <option id="sports">sports</option>
+            <option id="general-knowledge">general knowledge</option>
+            <option id="Entertainment-film">movies</option>
+            <option id="animals">animals</option>
+            <option id="history">history</option>
+        </select>
+  </div>
+
+  <div id="difficulty">
+      <label>Select your difficulty</label>
+        <Select>
+        <option id="easy">not too sure, are you?</option>
+        <option id="medium">eh, you probably got all C's</option>
+        <option id="hard">whoa, way too much information</option>
+        </Select>
+  </div>
+
+  <div id="answer-buttons">
+    <button class="large" id="answers">A</button>
+    <button class="large" id="answers">B</button>
+    <button class="large" id="answers">C</button>
+    <button class="large" id="answers">D</button>
+  </div>
+
+  <div id="other-buttons">
+    <button class="large" id="START">START</button>
+    <button class="large" id="Continue">CONTINUE</button>
+    <button class="large" id="Rules">RULES</button>
+
+  </div>
+
+
+<script src="assets/js/vendor.js"></script>
+<script src="assets/js/foundation.js"></script>
 </body>
 </html>
