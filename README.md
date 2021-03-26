@@ -36,7 +36,7 @@ A “want to play again?” Button will also be displayed along with the final g
 
 ## Built With
 * HTML
-* CSS
+* Foundation CSS
 
 ## APIs
 * GIPHY Developers
