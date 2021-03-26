@@ -39,21 +39,18 @@ A “want to play again?” Button will also be displayed along with the final g
 * CSS
 
 ## APIs
-GIPHY Developers
-Link: https://developers.giphy.com/docs/sdk/ 
+* GIPHY Developers
 
-Open Trivia DB
-Link: https://opentdb.com/api_config.php 
-
+* Open Trivia DB
 
 ## Website
 https://brookesemke.github.io/trivia/
 
 ## Contribution
 
-Jason Bailey
-Mitchell Baxter
-Luis Cabrera
-Kazu Hishida
-Zach Puckett
-Brooke Semke
+* Jason Bailey
+* Mitchell Baxter
+* Luis Cabrera
+* Kazu Hishida
+* Zach Puckett
+* Brooke Semke
