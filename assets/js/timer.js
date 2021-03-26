@@ -1,4 +1,4 @@
-var secondsLeft = 5; // set to 30 for final commit
+var secondsLeft = 10; // set to 30 for final commit
 
 var titlebarEl = document.querySelector("#titlebar");
 var countdownEl = document.querySelector("#timer");
@@ -14,6 +14,8 @@ var playerformEl = document.querySelector("#playerform");
 var questionsEl = document.querySelector("#questions");
 var gifsEl = document.querySelector("#gifs");
 
+var messagesEl = document.querySelector("#messages");
+
 //create
 var titleEl = document.createElement("p");
 var timeEl = document.createElement("p");
@@ -26,6 +28,7 @@ var questionOption2 = document.createElement("button");
 var questionOption3 = document.createElement("button");
 var questionOption4 = document.createElement("button");
 var loserGif = document.createElement("img");
+var message = document.createElement("p");
 
 //add classes for example:
 //timeEl.className = "prettypink";
@@ -61,6 +64,8 @@ questionsEl.appendChild(questionOption2);
 questionsEl.appendChild(questionOption3);
 questionsEl.appendChild(questionOption4);
 
+messagesEl.appendChild(message);
+
 // Function to start timer
 function startTimer() {
   interval = setInterval(function () {
@@ -70,14 +75,21 @@ function startTimer() {
       clearInterval(interval);
       endGame();
     }
+    else if (secondsLeft < 5) {
+      message.textContent = "HURRY! HURRY! HURRY!";
+    }
+
   }, 1000);
 }
-
-
 
 // Update seconds
 function timeLeft() {
   timeEl.textContent = "TIME: " + secondsLeft;
+}
+
+function hurryUp() {
+  questionsEl.hidden = true;
+  gifsEl.appendChild(loserGif);
 }
 
 function endGame() {
