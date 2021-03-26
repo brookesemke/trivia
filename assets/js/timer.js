@@ -1,4 +1,6 @@
 var secondsLeft = 10; // set to 30 for final commit
+
+// identify the divs where we will inserting elements
 var titlebarEl = document.querySelector("#titlebar");
 var countdownEl = document.querySelector("#timer");
 var welcomegifEl = document.querySelector("#welcome");  
@@ -8,7 +10,7 @@ var gifsEl = document.querySelector("#gifs");
 var messagesEl = document.querySelector("#messages");
 var actionsEl = document.querySelector("#actions");
 
-//create
+// create elements
 var titleEl = document.createElement("p");
 var timeEl = document.createElement("p");
 var rulesBtn = document.createElement("button");
@@ -23,8 +25,7 @@ var questionOption4 = document.createElement("button");
 var loserGif = document.createElement("img");
 var message = document.createElement("p");
 
-//add classes for example:
-//timeEl.className = "prettypink";
+// TEMP classes
 rulesBtn.className = "action";
 playBtn.className = "action";
 startBtn.className = "action";
@@ -34,29 +35,30 @@ questionOption2.className = "answer";
 questionOption3.className = "answer";
 questionOption4.className = "answer";
 
-//add texts
+// add texts to buttons
 rulesBtn.textContent = "Rules";
 playBtn.textContent = "Play";
 startBtn.textContent = "Start";
 continueBtn.textContent = "Next";
+
+// TEMP GIF
 loserGif.src = "https://i.gifer.com/49f1.gif";
 loserGif.width = "350";
 
-//hardoced temporarily for testing
+// These should come from the API
 questionTitle.textContent = "Trivia Question?"
 questionOption1.textContent = "1 wrong answer";
 questionOption2.textContent = "2 wrong answer";
 questionOption3.textContent = "3 wrong answer";
 questionOption4.textContent = "4 correct answer";
 
-//append items
+// Add items to the divs
 titlebarEl.appendChild(titleEl);
 countdownEl.appendChild(timeEl);
 actionsEl.appendChild(rulesBtn);
 actionsEl.appendChild(playBtn);
 actionsEl.appendChild(startBtn);
 actionsEl.appendChild(continueBtn);
-
 questionsEl.appendChild(questionTitle);
 questionsEl.appendChild(questionOption1);
 questionsEl.appendChild(questionOption2);
@@ -77,6 +79,7 @@ function startTimer() {
     }
     else if (secondsLeft < 5) {
       message.textContent = "HURRY! HURRY! HURRY!";
+      message.className = "blink";
     }
 
   }, 1000);
