@@ -1,4 +1,6 @@
-
+<!--for the JS...
+we need to have the h3 Subheader change text to read:let's play a game!, our next player is..., question one (justified left) final score with an var input for score, oh no you didn't
+we need event listeners for the buttons-->
 <!doctype html>
 <html class="no-js" lang="en">
   <head>
@@ -8,13 +10,30 @@
     <title>Riddle Me This...</title>
     <link rel="stylesheet" href="assets/css/foundation.css">
   </head>
-<body>
-  <!-- typography -->
-  <div class="row">
-     <h1 class="header">Riddle Me This...</h1>   
+
+  <body>
+    <header>
+        <div class="row" id="header">
+            <h1 id="header">Riddle Me This...</h1>  
+            <h3 id="subheader">Let's Play A Game!</h3> 
+        </div>
+    </header>
+
+    <main>
+    <div class="row" id="enter-name">
+        <form>
+            <div>
+                <label>Name</label>
+                <input type="text" placeholder="NAME FOOL!">
+            </div>
+        </form>
+    </div>
+
+  <div class="row" id="questions">
+      <p class="question"></p>
   </div>
-<hr>
-  <div class="row" id="topics">
+
+    <div class="row" id="topics">
       <label>Select a topic</label>
         <select>
             <option id="sports">sports</option>
@@ -23,16 +42,17 @@
             <option id="animals">animals</option>
             <option id="history">history</option>
         </select>
-  </div>
+    </div>
 
-  <div class="row" id="difficulty">
-      <label>Select your difficulty</label>
-        <Select>
-        <option id="easy">not too sure, are you?</option>
-        <option id="medium">eh, you probably got all C's</option>
-        <option id="hard">whoa, way too much information</option>
-        </Select>
-  </div>
+    <div class="row" id="difficulty">
+        <label>Select your difficulty</label>
+            <Select>
+                <option id="easy">not too sure, are you?</option>
+                <option id="medium">eh, you probably got all C's</option>
+                <option id="hard">whoa, way too much information</option>
+            </Select>
+    </div>
+    </main>
 
   <div class="row" id="answer-buttons">
     <button class="large" id="answers">A</button>
@@ -42,13 +62,15 @@
   </div>
 
   <div class="row" id="other-buttons">
-    <button class="large" id="START">START</button>
-    <button class="large" id="Continue">CONTINUE</button>
-    <button class="large" id="Rules">RULES</button>
+    <button class="large" id="start">START!</button>
+    <button class="large" id="begin">BEGIN!</button>
+    <button class="large" id="chuck">CHUCK!</button>
+    <button class="large" id="next">NEXT!</button>
+    <button class="large" id="again">AGAIN!</button>
   </div>
 
-  <div class="row" id=rules-page>
-
+  <div class="row">
+    <button class="large" id="rules"><a href="rules.html" id="rules">RULES!</a></button>
   </div>
 
   <div class="row" id="footer">
