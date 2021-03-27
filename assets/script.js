@@ -1,6 +1,6 @@
 function checkApi() {
 
-    fetch ('https://opentdb.com/api.php?amount=10')
+    fetch ('https://opentdb.com/api.php?amount=10&type=multiple')
 
     .then(function(response) {
         return response.json()
@@ -32,7 +32,7 @@ function checkApi() {
             var typeOne = (triviaData.results[0].type)
             console.log(typeOne)
 
-            //var for incorrect answers, one result for T/F, 3 results for multiple choice
+            //var for incorrect answers, one result for T/F, 3 results for multiple choice, displays array
 
             var incAnsOne = (triviaData.results[0].incorrect_answers)
             console.log(incAnsOne)
@@ -64,7 +64,7 @@ function checkApi() {
 
                 //var to make a happy gif, should iterate to the next 'happy' gif in the array afterwards can test by repeating the variable, it does work
 
-                let i = 0;
+                let i = Math.floor( Math.random() * 50)
                 var happyGifOne = (happyGif.data[i].images.original.url)
                 console.log(happyGifOne)
                 i++;
@@ -81,7 +81,9 @@ function checkApi() {
 
                 //var to make a sad gif, should iterate to the next 'sad' gif in the array afterwards can test by repeating the variable, it does work
 
-                let i = 0;
+                //let i = 0;
+
+                let i = Math.floor( Math.random() * 50)
                 var sadGifOne = (sadGif.data[i].images.original.url)
                 console.log(sadGifOne)
                 i++;
