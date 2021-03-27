@@ -147,8 +147,7 @@ function checkApi() {
  var rulesBtn = document.createElement("button");
  var playBtn = document.createElement("button");
  //var nameEl = document.createElement("input"); // name gathering placed on hold for v1.0
- var topicsEl = document.createElement("select")
- var levelsEl = document.createElement("select")
+
  var startBtn = document.createElement("button");
  var continueBtn = document.createElement("button");
  var finishBtn = document.createElement("button");
@@ -171,8 +170,7 @@ function checkApi() {
  startBtn.className = "action";
  finishBtn.className = "action";
  // nameEl.className = "playerform"; // name gathering placed on hold for v1.0
- topicsEl.className = "playerform";
- levelsEl.className = "playerform";
+
  continueBtn.className = "action";
  questionOption1.className = "answer";
  questionOption2.className = "answer";
@@ -185,32 +183,20 @@ function checkApi() {
  startBtn.textContent = "Start";
  continueBtn.textContent = "Next";
  finishBtn.textContent = "Finish";
+
  // nameEl.placeholder = "Tell us your name and style"; // name gathering placed on hold for v1.0
  questionOption1.value = "0";
  questionOption2.value = "1";
  questionOption3.value = "2";
  questionOption4.value = "3";
- 
- // TEMP GIFs
- 
- //not needed with api calls -JB
- /*winnerGif.src = "https://i.gifer.com/2Nli.gif";
- winnerGif.width = "350";
- timesupGif.src ="https://i.gifer.com/2lwS.gif"
- timesupGif.width = "350";
- resultGif.src ="https://i.gifer.com/FPB.gif"
- resultGif.width = "350";
- //confused gif https://i.gifer.com/HyPJ.gif
- */
- 
+
  // Append items to the divs
  titlebarEl.appendChild(titleEl);
  countdownEl.appendChild(timeEl);
  actionsEl.appendChild(rulesBtn);
  actionsEl.appendChild(playBtn);
  // playerformEl.appendChild(nameEl); // name gathering placed on hold for v1.0
- playerformEl.appendChild(topicsEl);
- playerformEl.appendChild(levelsEl);
+
  actionsEl.appendChild(startBtn);
  actionsEl.appendChild(continueBtn);
  questionsEl.appendChild(questionTitle);
@@ -222,22 +208,7 @@ function checkApi() {
  welcomegifEl.appendChild(welcomeGif);
  
  
- //Create and append the topics 
- for (var i = 0; i < topics.length; i++) {
-   var topic = document.createElement("option");
-   topic.setAttribute("value",topics[i]);
-   topic.text = topics[i];
-   topicsEl.appendChild(topic);
- }
- 
- //Create and append the difficulty levels 
- for (var i = 0; i < levels.length; i++) {
-   var level = document.createElement("option");
-   level.setAttribute("value",levels[i]);
-   level.text = levels[i];
-   levelsEl.appendChild(level);
- }
- 
+
  // Start Game
  function welcome() {
    titleEl.textContent = "LET'S PLAY A GAME!";
@@ -258,47 +229,66 @@ function checkApi() {
    welcomegifEl.hidden = true;
    playerformEl.hidden = false;
  
+   var topicsEl = document.createElement("select")
+   var levelsEl = document.createElement("select")
+   
+   playerformEl.appendChild(topicsEl);
+   playerformEl.appendChild(levelsEl);
+
+   topicsEl.className = "playerform";
+   levelsEl.className = "playerform";
+
+    //Create and append the topics 
+   for (var i = 0; i < topics.length; i++) {
+     var topic = document.createElement("option");
+     topic.setAttribute("value",topics[i]);
+     topic.text = topics[i];
+     topicsEl.appendChild(topic);
+   }
+
+   //Create and append the difficulty levels 
+   for (var i = 0; i < levels.length; i++) {
+     var level = document.createElement("option");
+     level.setAttribute("value",levels[i]);
+     level.text = levels[i];
+     levelsEl.appendChild(level);
+}
   
   //When start button is clicked... 
   startBtn.addEventListener("click", function () {
-  // name gathering placed on hold for v1.0
-  //  if (nameEl.value === "") {
-  //    alert("You must type in your name");
-  //    return;
-  //  }
-  //  else {
-  //  localStorage.setItem("player", nameEl.value);
+
     startBtn.className = "hidden";
     playerformEl.hidden = true;
     questionsEl.hidden = false;
     askQuestion(qindex);
 
-    var topics = ["Sports","Movies","Music","Video Games","Cars"];
-    if (topics === "Sports") {
+    
+    var topicChoice = topic.text
+    if (topicChoice === "Sports") {
       var cat = "&category=21"
     }
-    if (topics === "Movies") {
+    if (topicChoice === "Movies") {
       var cat = "&category=11"
     }
-    if (topics === "Music") {
+    if (topicChoice === "Music") {
       var cat = "&category=12"
     }
-    if (topics === "Video Games") {
+    if (topicChoice === "Video Games") {
       var cat = "&category=15"
     }
-    if (topics === "Cars") {
+    if (topicChoice === "Cars") {
       var cat = "&category=28"
     }
     console.log(cat)
 
-  var levels = ["Easy","Medium","Hard"];
-    if (levels === "Easy") {
+  var levelChoice = level.text
+    if (levelChoice === "Easy") {
       var diff = "&difficulty=easy"
     }
-    if (levels === "Medium") {
+    if (levelChoice === "Medium") {
       var diff = "&difficulty=medium"
     }
-    if (levels === "Hard") {
+    if (levelChoice === "Hard") {
       var diff = "&difficulty=hard"
     }
     console.log(diff)
