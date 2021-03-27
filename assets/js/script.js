@@ -2,7 +2,7 @@ function checkApi() {
 
    
  
- 
+      function makeHappy() {
        fetch ('https://api.giphy.com/v1/gifs/search?q=happy&rating=g&api_key=yhspGREo8A4hP2vDCFvpE5d93COdKp5R')
  
        .then(function(response) {
@@ -20,8 +20,9 @@ function checkApi() {
                winnerGif.width = "350";      
            })
        })
- 
- 
+      }
+
+      function makeSad() {
        fetch ('https://api.giphy.com/v1/gifs/search?q=sad&rating=g&api_key=yhspGREo8A4hP2vDCFvpE5d93COdKp5R')
  
        .then(function(response) {
@@ -41,7 +42,7 @@ function checkApi() {
                loserGif.width = "350";
            })
        })
- 
+      }
  //not currently using a celebrate gif, replaced with charles norris
  /*      fetch ('https://api.giphy.com/v1/gifs/search?q=celebration&rating=g&api_key=yhspGREo8A4hP2vDCFvpE5d93COdKp5R')
  
@@ -119,8 +120,8 @@ function checkApi() {
  // questions and answers (TEMPORARILY HARDCODED HERE, SHOULD BE READ FROM JSON?)
  var questions = [
    { q: "This is Question number 1", a: ["A", "B", "C", "D"], ca: "3" },
- //  { q: "This is Question number 2", a: ["A", "B", "C", "D"], ca: "2" },
- //  { q: "This is Question number 3", a: ["A", "B", "C", "D"], ca: "1" },
+   { q: "This is Question number 2", a: ["A", "B", "C", "D"], ca: "2" },
+   { q: "This is Question number 3", a: ["A", "B", "C", "D"], ca: "1" },
  //  { q: "This is Question number 4", a: ["A", "B", "C", "D"], ca: "0" },
  //  { q: "This is Question number 5", a: ["A", "B", "C", "D"], ca: "3" },
  //  { q: "This is Question number 6", a: ["A", "B", "C", "D"], ca: "2" },
@@ -237,6 +238,8 @@ function checkApi() {
 
    topicsEl.className = "playerform";
    levelsEl.className = "playerform";
+
+   //added IDs to differentiate the dropdowns
    topicsEl.setAttribute('id', 'topicField')
    levelsEl.setAttribute('id', 'levelField')
 
@@ -264,12 +267,15 @@ function checkApi() {
     questionsEl.hidden = false;
     askQuestion(qindex);
      
+    //created an array of only the selected option
     var topicChoice = [];
     for (var option of document.getElementById('topicField').options) {
       if (option.selected) {
         topicChoice.push(option.value)
       }
     }
+
+    //pulled the value of the selected option array
     var topicPicked = topicChoice[0]
   
     if (topicPicked === "Sports") {
@@ -289,12 +295,15 @@ function checkApi() {
     }
     console.log(cat)
 
+    //created an array of only the selected option
     var levelChoice = [];
     for (var option of document.getElementById('levelField').options) {
       if (option.selected) {
         levelChoice.push(option.value)
       }
     }
+
+    //pulled the value of the selected option array
     var levelPicked = levelChoice[0]
 
     if (levelPicked === "Easy") {
@@ -469,6 +478,8 @@ function checkApi() {
        secondsLeft = 10;
        questionsEl.hidden = true;
        gifsEl.hidden = false;
+       gifsEl.innerHTML = " ";
+       makeHappy();
        gifsEl.appendChild(winnerGif);
        continueBtn.hidden = false;
        continueBtn.className = "action";
@@ -480,6 +491,7 @@ function checkApi() {
        secondsLeft = 10;
        questionsEl.hidden = true;
        gifsEl.hidden = false;
+       makeSad();
        gifsEl.appendChild(loserGif);
        continueBtn.hidden = false;
        continueBtn.className = "action";
