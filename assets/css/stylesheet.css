@@ -1,0 +1,44 @@
+.answer {
+    background-color: #F1B0D3;
+    border: none;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    display: block;
+    font-size: 16px;
+    width: 350px;
+    margin: 10px;
+    box-shadow: 3px 3px 10px grey;
+  }
+  .action {
+    background-color: #fac43b;
+    border: none;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-size: 16px;
+    width: 100px;
+    margin: 10px;
+    box-shadow: 3px 3px 10px grey;
+  }
+
+  .playerform {
+    display: block;
+    width: 250px;
+    border: none;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 6px;
+  }
+
+  .hidden {
+    visibility: hidden;
+  }
+  .blink {
+  animation: blinker 1s linear infinite;
+  }
+  @keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+  } 
