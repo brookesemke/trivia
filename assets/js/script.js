@@ -237,6 +237,8 @@ function checkApi() {
 
    topicsEl.className = "playerform";
    levelsEl.className = "playerform";
+   topicsEl.setAttribute('id', 'topicField')
+   levelsEl.setAttribute('id', 'levelField')
 
     //Create and append the topics 
    for (var i = 0; i < topics.length; i++) {
@@ -252,7 +254,7 @@ function checkApi() {
      level.setAttribute("value",levels[i]);
      level.text = levels[i];
      levelsEl.appendChild(level);
-}
+  }
   
   //When start button is clicked... 
   startBtn.addEventListener("click", function () {
@@ -261,34 +263,47 @@ function checkApi() {
     playerformEl.hidden = true;
     questionsEl.hidden = false;
     askQuestion(qindex);
-
-    
-    var topicChoice = topic.text
-    if (topicChoice === "Sports") {
+     
+    var topicChoice = [];
+    for (var option of document.getElementById('topicField').options) {
+      if (option.selected) {
+        topicChoice.push(option.value)
+      }
+    }
+    var topicPicked = topicChoice[0]
+  
+    if (topicPicked === "Sports") {
       var cat = "&category=21"
     }
-    if (topicChoice === "Movies") {
+    if (topicPicked === "Movies") {
       var cat = "&category=11"
     }
-    if (topicChoice === "Music") {
+    if (topicPicked === "Music") {
       var cat = "&category=12"
     }
-    if (topicChoice === "Video Games") {
+    if (topicPicked === "Video Games") {
       var cat = "&category=15"
     }
-    if (topicChoice === "Cars") {
+    if (topicPicked === "Cars") {
       var cat = "&category=28"
     }
     console.log(cat)
 
-  var levelChoice = level.text
-    if (levelChoice === "Easy") {
+    var levelChoice = [];
+    for (var option of document.getElementById('levelField').options) {
+      if (option.selected) {
+        levelChoice.push(option.value)
+      }
+    }
+    var levelPicked = levelChoice[0]
+
+    if (levelPicked === "Easy") {
       var diff = "&difficulty=easy"
     }
-    if (levelChoice === "Medium") {
+    if (levelPicked === "Medium") {
       var diff = "&difficulty=medium"
     }
-    if (levelChoice === "Hard") {
+    if (levelPicked === "Hard") {
       var diff = "&difficulty=hard"
     }
     console.log(diff)
