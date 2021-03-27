@@ -3,24 +3,14 @@ function checkApi() {
    
  
       function makeHappy() {
-
-        if (gifsEl.hidden = false){
-          gifsEl.removeChild(happyGif)
-        };
-        
        fetch ('https://api.giphy.com/v1/gifs/search?q=happy&rating=g&api_key=yhspGREo8A4hP2vDCFvpE5d93COdKp5R')
  
        .then(function(response) {
            return response.json()
            .then(function(happyGif) {
-               console.log(happyGif)
- 
                //var to make a happy gif, should iterate to the next 'happy' gif in the array afterwards can test by repeating the variable, it does work
- 
                let i = Math.floor( Math.random() * 50)
                var happyGifOne = (happyGif.data[i].images.original.url)
-               console.log(happyGifOne)
-               
                winnerGif.setAttribute('src', happyGifOne)
                winnerGif.width = "350";      
            })
@@ -28,24 +18,14 @@ function checkApi() {
       }
 
       function makeSad() {
-          if (gifsEl.hidden = false){
-            gifsEl.removeChild(loserGif)
-          };
-
        fetch ('https://api.giphy.com/v1/gifs/search?q=sad&rating=g&api_key=yhspGREo8A4hP2vDCFvpE5d93COdKp5R')
  
        .then(function(response) {
            return response.json()
            .then(function(sadGif) {
-               console.log(sadGif)
- 
                //var to make a sad gif, should iterate to the next 'sad' gif in the array afterwards can test by repeating the variable, it does work
- 
-               //let i = 0;
- 
                let i = Math.floor( Math.random() * 50)
                var sadGifOne = (sadGif.data[i].images.original.url)
-               console.log(sadGifOne)
                i++;
                loserGif.setAttribute('src', sadGifOne);
                loserGif.width = "350";
@@ -73,11 +53,8 @@ function checkApi() {
        .then(function(response) {
            return response.json()
            .then(function(playGif) {
-               console.log(playGif)
- 
                let i = Math.floor( Math.random() * 50)
                var playGifOne = (playGif.data[i].images.original.url)
-               console.log(playGifOne)
                welcomeGif.setAttribute('src', playGifOne);               
                welcomeGif.width = "350";
            })
@@ -88,11 +65,8 @@ function checkApi() {
        .then(function(response) {
            return response.json()
            .then(function(timeGif) {
-               console.log(timeGif)
- 
                let i = Math.floor( Math.random() * 50)
                var timeGifOne = (timeGif.data[i].images.original.url)
-               console.log(timeGifOne)
                timesupGif.setAttribute('src', timeGifOne);               
                timesupGif.width = "350";
            })
@@ -103,11 +77,8 @@ function checkApi() {
        .then(function(response) {
            return response.json()
            .then(function(chuckGif) {
-               console.log(chuckGif)
- 
                let i = Math.floor( Math.random() * 50)
                var chuckGifOne = (chuckGif.data[i].images.original.url)
-               console.log(chuckGifOne)
                resultGif.setAttribute('src', chuckGifOne);               
                resultGif.width = "350";
            })
@@ -416,7 +387,6 @@ function checkApi() {
  
  // ask next question
  continueBtn.addEventListener("click", function () {
-     gifsEl.hidden = true;
      questionsEl.hidden = false;
      continueBtn.hidden = true;
      gifsEl.innerHTML ="";
