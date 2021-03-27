@@ -6,18 +6,18 @@ var levels = ["Easy","Medium","Hard"];
 var qindex = 0;
 var qnum = 1;
 
-// questions and answers (TEMPORARILY HARDCODED HERE)
+// questions and answers (TEMPORARILY HARDCODED HERE, SHOULD BE READ FROM JSON?)
 var questions = [
   { q: "This is Question number 1", a: ["A", "B", "C", "D"], ca: "3" },
   { q: "This is Question number 2", a: ["A", "B", "C", "D"], ca: "2" },
   { q: "This is Question number 3", a: ["A", "B", "C", "D"], ca: "1" },
-//  { q: "This is Question number 4", a: ["A", "B", "C", "D"], ca: "3" },
+  { q: "This is Question number 4", a: ["A", "B", "C", "D"], ca: "0" },
 //  { q: "This is Question number 5", a: ["A", "B", "C", "D"], ca: "3" },
-//  { q: "This is Question number 6", a: ["A", "B", "C", "D"], ca: "3" },
-//  { q: "This is Question number 7", a: ["A", "B", "C", "D"], ca: "3" },
-//  { q: "This is Question number 8", a: ["A", "B", "C", "D"], ca: "3" },
+//  { q: "This is Question number 6", a: ["A", "B", "C", "D"], ca: "2" },
+//  { q: "This is Question number 7", a: ["A", "B", "C", "D"], ca: "1" },
+//  { q: "This is Question number 8", a: ["A", "B", "C", "D"], ca: "0" },
 //  { q: "This is Question number 9", a: ["A", "B", "C", "D"], ca: "3" },
-//  { q: "This is Question number 10", a: ["A", "B", "C", "D"], ca: "3" },
+//  { q: "This is Question number 10", a: ["A", "B", "C", "D"], ca: "2" },
 ];
 
 // identify the divs in the HTML where we will inserting elements
@@ -36,7 +36,7 @@ var titleEl = document.createElement("p");
 var timeEl = document.createElement("p");
 var rulesBtn = document.createElement("button");
 var playBtn = document.createElement("button");
-var nameEl = document.createElement("input");
+//var nameEl = document.createElement("input"); // name gathering placed on hold for v1.0
 var topicsEl = document.createElement("select")
 var levelsEl = document.createElement("select")
 var startBtn = document.createElement("button");
@@ -60,7 +60,7 @@ rulesBtn.className = "action";
 playBtn.className = "action";
 startBtn.className = "action";
 finishBtn.className = "action";
-nameEl.className = "playerform";
+// nameEl.className = "playerform"; // name gathering placed on hold for v1.0
 topicsEl.className = "playerform";
 levelsEl.className = "playerform";
 continueBtn.className = "action";
@@ -75,7 +75,7 @@ playBtn.textContent = "Play";
 startBtn.textContent = "Start";
 continueBtn.textContent = "Next";
 finishBtn.textContent = "Finish";
-nameEl.placeholder = "Tell us your name and style";
+// nameEl.placeholder = "Tell us your name and style"; // name gathering placed on hold for v1.0
 questionOption1.value = "0";
 questionOption2.value = "1";
 questionOption3.value = "2";
@@ -99,7 +99,7 @@ titlebarEl.appendChild(titleEl);
 countdownEl.appendChild(timeEl);
 actionsEl.appendChild(rulesBtn);
 actionsEl.appendChild(playBtn);
-playerformEl.appendChild(nameEl);
+// playerformEl.appendChild(nameEl); // name gathering placed on hold for v1.0
 playerformEl.appendChild(topicsEl);
 playerformEl.appendChild(levelsEl);
 actionsEl.appendChild(startBtn);
@@ -141,7 +141,7 @@ welcome();
 
 // when play button is clicked... 
 playBtn.addEventListener("click", function () {
-  titleEl.textContent = "OUR NEXT PLAYER IS...";
+  titleEl.textContent = "PICK A TOPIC AND DIFFICULTY LEVEL...";
   rulesBtn.className = "hidden";
   playBtn.className = "hidden";
   startBtn.className = "action";
@@ -151,17 +151,18 @@ playBtn.addEventListener("click", function () {
 
 //When start button is clicked... 
 startBtn.addEventListener("click", function () {
-  if (nameEl.value === "") {
-    alert("You must type in your name");
-    return;
-  }
-  else {
-  localStorage.setItem("player", nameEl.value);
+// name gathering placed on hold for v1.0
+//  if (nameEl.value === "") {
+//    alert("You must type in your name");
+//    return;
+//  }
+//  else {
+//  localStorage.setItem("player", nameEl.value);
   startBtn.className = "hidden";
   playerformEl.hidden = true;
   questionsEl.hidden = false;
   askQuestion(qindex);
-  }
+//  }
 })
 
 // Ask a question from the array 
@@ -258,7 +259,6 @@ questionsEl.addEventListener("click", function (event) {
       continueBtn.hidden = false;
       continueBtn.className = "action";
       score++;
-      console.log(score);
     }
     else {
       clearInterval(interval);
