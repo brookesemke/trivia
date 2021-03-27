@@ -3,6 +3,11 @@ function checkApi() {
    
  
       function makeHappy() {
+
+        if (gifsEl.hidden = false){
+          gifsEl.removeChild(happyGif)
+        };
+        
        fetch ('https://api.giphy.com/v1/gifs/search?q=happy&rating=g&api_key=yhspGREo8A4hP2vDCFvpE5d93COdKp5R')
  
        .then(function(response) {
@@ -23,6 +28,10 @@ function checkApi() {
       }
 
       function makeSad() {
+          if (gifsEl.hidden = false){
+            gifsEl.removeChild(loserGif)
+          };
+
        fetch ('https://api.giphy.com/v1/gifs/search?q=sad&rating=g&api_key=yhspGREo8A4hP2vDCFvpE5d93COdKp5R')
  
        .then(function(response) {
@@ -489,7 +498,6 @@ function checkApi() {
        clearInterval(interval);
        message.hidden = true;
        secondsLeft = 10;
-       questionsEl.hidden = true;
        gifsEl.hidden = false;
        makeSad();
        gifsEl.appendChild(loserGif);
