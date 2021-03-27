@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Riddle Me This...</title>
+<style>
+  .answer {
+    background-color: #F1B0D3;
+    border: none;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    display: block;
+    font-size: 16px;
+    width: 350px;
+    margin: 10px;
+    box-shadow: 3px 3px 10px grey;
+  }
+  .action {
+    background-color: #fac43b;
+    border: none;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-size: 16px;
+    width: 100px;
+    margin: 10px;
+    box-shadow: 3px 3px 10px grey;
+  }
+
+  .playerform {
+    display: block;
+    width: 250px;
+    border: none;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 6px;
+  }
+
+  .hidden {
+    visibility: hidden;
+  }
+  .blink {
+  animation: blinker 1s linear infinite;
+  }
+  @keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+  } 
+
+</style>
+</head>
+<body onload="checkApi()">
+  <!-- ALL YOU CARE ABOUT ARE THE DIVS WITH AN ID. YOU CAN IGNORE THE TABLE AND THE HARCODED STYLES -->
+  <table style="width:400px; height:600px; border-style: solid; border-width: 1px;">
+    <tr style="height:100px; background-color: hotpink;">
+      <th colspan="2" align="center" style="color: white;"><h1>RIDDLE ME THIS...</h1><h3>QUIZ.ATTITUDE.AWESOME.</h3></th>
+    </tr>
+    <tr height="50px" style="background-color: hotpink;">
+      <th align="left"><div id="titlebar"></th>
+      <th align="right"><div id="timer"></div></th>
+    </tr>
+    <tr style="background-color: #FC91C3;">
+      <th colspan="2" align="center">
+        <div id="welcome"></div>
+        <div id="playerform"></div>
+        <div id="questions"></div>
+        <div id="gifs"></div>
+        <div id="results"></div>
+      </th>
+    </tr>
+    <tr style="background-color: #FC91C3; height: 75px;">
+      <th colspan="2">
+        <div id="actions"></div>
+        <div id="messages"></div>
+      </th>
+    </tr>
+    <!-- Should this be a footer? meaning; always present? -->
+    <tr style="background-color: #FC91C3; height: 30px;">
+      <th colspan="2" align="left">COPYRIGHT THE FURIOUS 5</th>
+    </tr>
+  </table>  
+  <script src="./assets/js/script.js"></script>
+</body>
+</html>
