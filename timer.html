@@ -29,6 +29,16 @@
     margin: 10px;
     box-shadow: 3px 3px 10px grey;
   }
+
+  .playerform {
+    display: block;
+    width: 250px;
+    border: none;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 6px;
+  }
+
   .hidden {
     visibility: hidden;
   }
@@ -44,7 +54,7 @@
 </style>
 </head>
 <body>
-  <!-- ALL YOU CARE ABOUT ARE THE DIVS. IGNORE THE TABLE AND THE STYLES -->
+  <!-- ALL YOU CARE ABOUT ARE THE DIVS WITH AN ID. YOU CAN IGNORE THE TABLE AND THE HARCODED STYLES -->
   <table style="width:400px; height:600px; border-style: solid; border-width: 1px;">
     <tr style="height:100px; background-color: hotpink;">
       <th colspan="2" align="center" style="color: white;"><h1>RIDDLE ME THIS...</h1><h3>QUIZ.ATTITUDE.AWESOME.</h3></th>
@@ -55,23 +65,11 @@
     </tr>
     <tr style="background-color: #FC91C3;">
       <th colspan="2" align="center">
-        <div id="welcome"><img style="width:350px" src="https://media4.giphy.com/media/26FPqtXZkuciQPklO/giphy.gif"/></div>
-        <div id="playerform">
-          <input type="text" style="display:block;">
-          <select id="topics" name="topics" style="display:block">
-            <option value="sports">Sports</option>
-            <option value="movies">Movies</option>
-            <option value="music">Music</option>
-            <option value="videogames">Video Games</option>
-          </select>
-          <select id="difficulty" name="difficulty" style="display:block;">
-            <option value="easy">Easy</option>
-            <option value="medium">Medium</option>
-            <option value="hard">Hard</option>
-          </select>
-        </div>
+        <div id="welcome"></div>
+        <div id="playerform"></div>
         <div id="questions"></div>
         <div id="gifs"></div>
+        <div id="results"></div>
       </th>
     </tr>
     <tr style="background-color: #FC91C3; height: 75px;">
