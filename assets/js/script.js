@@ -6,6 +6,7 @@ function checkApi() {
    .then(function(response) {
        return response.json()
        .then(function(happyGif) {
+         console.log(response)
            //var to make a happy gif, should iterate to the next 'happy' gif in the array afterwards can test by repeating the variable, it does work
            let i = Math.floor( Math.random() * 50)
            var happyGifOne = (happyGif.data[i].images.original.url)
@@ -295,15 +296,32 @@ fetch ('https://opentdb.com/api.php?amount=10' + cat + diff + '&type=multiple')
       console.log(triviaData)
 
       //var for question
-      let i = 0;
-      var questionOne = (triviaData.results[i].question)
-      console.log(questionOne)
-      i++;
+
+      var questionOne = (triviaData.results[0].question)
+      var questionTwo = (triviaData.results[1].question)
+      var questionThree = (triviaData.results[2].question)
+      var questionFour = (triviaData.results[3].question)
+      var questionFive = (triviaData.results[4].question)
+      var questionSix = (triviaData.results[5].question)
+      var questionSeven = (triviaData.results[6].question)
+      var questionEight = (triviaData.results[7].question)
+      var questionNine = (triviaData.results[8].question)
+      var questionTen = (triviaData.results[9].question)
+
 
       //var for answer
 
       var answerOne = (triviaData.results[0].correct_answer)
-      console.log(answerOne)
+      var answerTwo = (triviaData.results[1].correct_answer)
+      var answerThree = (triviaData.results[2].correct_answer)
+      var answerFour = (triviaData.results[3].correct_answer)
+      var answerFive = (triviaData.results[4].correct_answer)
+      var answerSix = (triviaData.results[5].correct_answer)
+      var answerSeven = (triviaData.results[6].correct_answer)
+      var answerEight = (triviaData.results[7].correct_answer)
+      var answerNine = (triviaData.results[8].correct_answer)
+      var answerTen = (triviaData.results[9].correct_answer)
+      
 
       //var for difficulty
 
@@ -323,11 +341,40 @@ fetch ('https://opentdb.com/api.php?amount=10' + cat + diff + '&type=multiple')
       //var for incorrect answers, one result for T/F, 3 results for multiple choice, displays array
 
       var incAnsOne = (triviaData.results[0].incorrect_answers)
+      var incAnsTwo = (triviaData.results[1].incorrect_answers)
+      var incAnsThree = (triviaData.results[2].incorrect_answers)
+      var incAnsFour = (triviaData.results[3].incorrect_answers)
+      var incAnsFive = (triviaData.results[4].incorrect_answers)
+      var incAnsSix = (triviaData.results[5].incorrect_answers)
+      var incAnsSeven = (triviaData.results[6].incorrect_answers)
+      var incAnsEight = (triviaData.results[7].incorrect_answers)
+      var incAnsNine = (triviaData.results[8].incorrect_answers)
+      var incAnsTen = (triviaData.results[9].incorrect_answers)
+
+      
      
       //pushes the correct answer into the incAnsOne array with the incorrect answers
       //sorts it, randomizing where the correct answer appears in the array
       incAnsOne.push(answerOne)
       incAnsOne.sort()
+      incAnsTwo.push(answerTwo)
+      incAnsTwo.sort()
+      incAnsThree.push(answerThree)
+      incAnsThree.sort()
+      incAnsFour.push(answerFour)
+      incAnsFour.sort()
+      incAnsFive.push(answerFive)
+      incAnsFive.sort()
+      incAnsSix.push(answerSix)
+      incAnsSix.sort()
+      incAnsSeven.push(answerSeven)
+      incAnsSeven.sort()
+      incAnsEight.push(answerEight)
+      incAnsEight.sort()
+      incAnsNine.push(answerNine)
+      incAnsNine.sort()
+      incAnsTen.push(answerTen)
+      incAnsTen.sort()
       console.log(incAnsOne)
       correctAnsArr = []
       correctAnsArr.push(answerOne)
@@ -343,20 +390,21 @@ fetch ('https://opentdb.com/api.php?amount=10' + cat + diff + '&type=multiple')
       //this pulls the questions and lists the answers into the game, correct answer does not work however
        var questions = [
       { q: questionOne, a: incAnsOne, ca: correctAnsArr },
-      { q: questionOne, a: incAnsOne, ca: correctAnsArr },
-      { q: "This is Question number 3", a: ["A", "B", "C", "D"], ca: "1" },
-    //  { q: "This is Question number 4", a: ["A", "B", "C", "D"], ca: "0" },
-    //  { q: "This is Question number 5", a: ["A", "B", "C", "D"], ca: "3" },
-    //  { q: "This is Question number 6", a: ["A", "B", "C", "D"], ca: "2" },
-    //  { q: "This is Question number 7", a: ["A", "B", "C", "D"], ca: "1" },
-    //  { q: "This is Question number 8", a: ["A", "B", "C", "D"], ca: "0" },
-    //  { q: "This is Question number 9", a: ["A", "B", "C", "D"], ca: "3" },
-    //  { q: "This is Question number 10", a: ["A", "B", "C", "D"], ca: "2" },
+      { q: questionTwo, a: incAnsTwo, ca: correctAnsArr },
+      { q: questionThree, a: incAnsThree, ca: correctAnsArr },
+      { q: questionFour, a: incAnsFour, ca: correctAnsArr },
+      { q: questionFive, a: incAnsFive, ca: correctAnsArr },
+      { q: questionSix, a: incAnsSix, ca: correctAnsArr },
+      { q: questionSeven, a: incAnsSeven, ca: correctAnsArr },
+      { q: questionEight, a: incAnsEight, ca: correctAnsArr },
+      { q: questionNine, a: incAnsNine, ca: correctAnsArr },
+      { q: questionTen, a: incAnsTen, ca: correctAnsArr },
+
     ];
 
               // Ask a question from the array 
     function askQuestion(qindex) {
-      if (questions.length < qnum){
+      if (questions.length <= qnum){
         gameOver();
       }
       else{
@@ -379,6 +427,7 @@ fetch ('https://opentdb.com/api.php?amount=10' + cat + diff + '&type=multiple')
       gifsEl.innerHTML ="";
       qindex++;
       askQuestion(qindex);
+      
   })
   
 
@@ -386,8 +435,25 @@ fetch ('https://opentdb.com/api.php?amount=10' + cat + diff + '&type=multiple')
   questionsEl.addEventListener("click", function (event) {
   if (event.target.matches(".answer")) {
   var buttonClicked = event.target.value;
+  console.log(buttonClicked);
+  //console.log(incAnsOne.length);
+  //console.log(incAnsOne);
+  //console.log(correctAnsArr);
+  //console.log(incAnsOne.indexOf(correctAnsArr));
+  var rightAnsOne = JSON.stringify(incAnsOne.indexOf(answerOne));
+  var rightAnsTwo = JSON.stringify(incAnsTwo.indexOf(answerTwo));
+  var rightAnsThree = JSON.stringify(incAnsThree.indexOf(answerThree));
+  var rightAnsFour = JSON.stringify(incAnsFour.indexOf(answerFour));
+  var rightAnsFive = JSON.stringify(incAnsFive.indexOf(answerFive));
+  var rightAnsSix = JSON.stringify(incAnsSix.indexOf(answerSix));
+  var rightAnsSeven = JSON.stringify(incAnsSeven.indexOf(answerSeven));
+  var rightAnsEight = JSON.stringify(incAnsEight.indexOf(answerEight));
+  var rightAnsNine = JSON.stringify(incAnsNine.indexOf(answerNine));
+  var rightAnsTen = JSON.stringify(incAnsTen.indexOf(answerTen));
+ 
+
   //for (var i = 0; i < questions.length; i++) {
-  if (buttonClicked === questions[qindex].ca){
+  if (buttonClicked === rightAnsOne && qnum === 2 || buttonClicked === rightAnsTwo && qnum === 3 ||buttonClicked === rightAnsThree && qnum === 4 || buttonClicked === rightAnsFour && qnum === 5 || buttonClicked === rightAnsFive && qnum === 6 || buttonClicked === rightAnsSix && qnum === 7 || buttonClicked === rightAnsSeven && qnum === 8 || buttonClicked === rightAnsEight && qnum === 9 || buttonClicked === rightAnsNine && qnum === 10 || buttonClicked === rightAnsTen && qnum === 11  ){
     clearInterval(interval);
     message.hidden = true;
     secondsLeft = 10;
@@ -404,12 +470,15 @@ fetch ('https://opentdb.com/api.php?amount=10' + cat + diff + '&type=multiple')
     clearInterval(interval);
     message.hidden = true;
     secondsLeft = 10;
+    questionsEl.hidden = true;
     gifsEl.hidden = false;
     makeSad();
     gifsEl.appendChild(loserGif);
     continueBtn.hidden = false;
     continueBtn.className = "action";
   }
+
+
 }
 })
 }  
