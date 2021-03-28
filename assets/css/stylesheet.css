@@ -1,69 +1,107 @@
-.table-background {
-    background-color: hotpink;
+.h1,
+h1 {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-size: 2rem;
 }
 
+table {
+  /* width: 400px;
+  height: 600px; */
+  border-style: solid;
+  border-width: 1px;
+}
 
+#TR01 {
+  height: 100px;
+  background-color: hotpink;
+  color: white;
+}
+
+#TR01 h1 {
+  color: white;
+}
+
+#TR01 h3 {
+  color: white;
+}
+
+#TR02 {
+  height: 50px;
+  background-color: hotpink;
+}
+
+#TR03 {
+  background-color: #fc91c3;
+}
+
+#TR04 {
+  background-color: #fc91c3;
+  height: 75px;
+}
+
+#TR05 {
+  background-color: #fc91c3;
+  height: 30px;
+}
+
+#TR05 p {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-size: 10px;
+}
+
+#titlebar {
+  text-align: left;
+}
 
 .answer {
-    background-color: #F1B0D3;
-    border: none;
-    color: white;
-    padding: 10px;
-    text-align: center;
-    display: block;
-    font-size: 16px;
-    width: 350px;
-    margin: 10px;
-    box-shadow: 3px 3px 10px grey;
-  }
-  .action {
-    background-color: #fac43b;
-    border: none;
-    color: white;
-    padding: 10px;
-    text-align: center;
-    font-size: 16px;
-    width: 100px;
-    margin: 10px;
-    box-shadow: 3px 3px 10px grey;
-  }
+  background-color: #f1b0d3;
+  border: none;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  display: block;
+  font-size: 16px;
+  width: 350px;
+  margin: 10px;
+  box-shadow: 3px 3px 10px grey;
+}
 
-  .playerform {
-    display: block;
-    width: 250px;
-    border: none;
-    padding: 10px;
-    margin: 10px;
-    border-radius: 6px;
-  }
+.action {
+  background-color: #fac43b;
+  border: none;
+  border-radius: 30px;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  font-size: 16px;
+  width: 100px;
+  margin: auto 10px;
+  box-shadow: 3px 3px 10px grey;
+}
 
-  .hidden {
-    visibility: hidden;
-  }
-  .blink {
+.playerform {
+  display: block;
+  width: 250px;
+  border: none;
+  padding: 20px;
+  margin: 10px;
+  border-radius: 6px;
+}
+
+.hidden {
+  visibility: hidden;
+  width: 0px;
+  height: 0px;
+  margin: 0px;
+  padding: 0px;
+}
+.blink {
   animation: blinker 1s linear infinite;
-  }
-  @keyframes blinker {
+}
+@keyframes blinker {
   50% {
     opacity: 0;
   }
-  } 
-
-  /* Foundation Code Overides */
-
-  .button {
-    display: inline-block;
-    vertical-align: middle;
-    margin: 0 0 1rem 0;
-    padding: 0.85em 1em;
-    border: 1px solid transparent;
-    border-radius: 0;
-    -webkit-transition: background-color 0.25s ease-out, color 0.25s ease-out;
-    transition: background-color 0.25s ease-out, color 0.25s ease-out;
-    font-family: inherit;
-    font-size: 0.9rem;
-    -webkit-appearance: none;
-    line-height: 1;
-    text-align: center;
-    cursor: pointer; }
-
+}

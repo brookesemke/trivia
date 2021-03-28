@@ -1,30 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css" integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
-  <link rel="stylesheet" href="./assets/css/stylesheet.css" type="text-css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Riddle Me This...</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    />
 
+    <!-- Compressed Foundation CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css"
+      integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I="
+      crossorigin="anonymous"
+    />
 
-  
-  <title>Riddle Me This...</title>
+    <link rel="stylesheet" href="./assets/css/stylesheet.css" type="text/css" />
+  </head>
+  <body>
+    <!-- ALL YOU CARE ABOUT ARE THE DIVS WITH AN ID. YOU CAN IGNORE THE TABLE AND THE HARCODED STYLES -->
 
-</head>
-
-<body>
-  <!-- ALL YOU CARE ABOUT ARE THE DIVS WITH AN ID. YOU CAN IGNORE THE TABLE AND THE HARCODED STYLES -->
-  <div>
-    <table class="table-background">
-      <tr>
-        <th colspan="2" align="center" <h1>RIDDLE ME THIS...</h1><h3>QUIZ.ATTITUDE.AWESOME.</h3></th>
+    <table>
+      <tr id="TR01">
+        <th colspan="2" align="center">
+          <h1>RIDDLE ME THIS...</h1>
+          <h3>QUIZ.ATTITUDE.AWESOME.</h3>
+        </th>
       </tr>
-      <tr height="50px" >
-        <th align="left"><div id="titlebar"></th>
-        <th align="right"><div id="timer"></div></th>
+      <tr id="TR02">
+        <th align="left">
+          <div id="titlebar"></div>
+        </th>
+        <th align="right">
+          <div id="timer"></div>
+        </th>
       </tr>
-      <tr >
+      <tr id="TR03">
         <th colspan="2" align="center">
           <div id="welcome"></div>
           <div id="playerform"></div>
@@ -33,24 +47,27 @@
           <div id="results"></div>
         </th>
       </tr>
-      <tr>
-        <th colspan="2">
+      <tr id="TR04">
+        <th colspan="2" align="center">
           <div id="actions"></div>
           <div id="messages"></div>
         </th>
       </tr>
       <!-- Should this be a footer? meaning; always present? -->
-      <tr>
-        <th colspan="2" align="left">COPYRIGHT THE FURIOUS 5</th>
+      <tr id="TR05">
+        <th colspan="2" align="center">
+          <p>COPYRIGHT THE FURIOUS 5</p>
+        </th>
       </tr>
-    </table>  
-  </div>
-  
-  
+    </table>
 
-  <script src="assets/js/vendor.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js" integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
-  <script src="./assets/js/script.js"></script>
+    <!-- Compressed Foundation JavaScript -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js"
+      integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o="
+      crossorigin="anonymous"
+    ></script>
 
-</body>
+    <script src="./assets/js/script.js"></script>
+  </body>
 </html>
