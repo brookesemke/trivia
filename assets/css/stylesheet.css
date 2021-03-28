@@ -1,53 +1,60 @@
-.h1,
-h1 {
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
-  font-size: 2rem;
-}
-
 table {
-  /* width: 400px;
-  height: 600px; */
+  width: 400px;
+  height: 600px; 
   border-style: solid;
   border-width: 1px;
 }
 
 #TR01 {
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   height: 100px;
-  background-color: hotpink;
+  background-color: #d16491;
   color: white;
 }
 
 #TR01 h1 {
   color: white;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: xx-large;
+  line-height: 8px;
+  letter-spacing: 1px;
 }
 
 #TR01 h3 {
   color: white;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: large;
+  letter-spacing: 1px;
 }
 
 #TR02 {
   height: 50px;
-  background-color: hotpink;
+  background-color: #d16491;
+}
+
+#TR02 p {
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  letter-spacing: 1px;
 }
 
 #TR03 {
-  background-color: #fc91c3;
+  background-color: #e889ae;
 }
 
 #TR04 {
-  background-color: #fc91c3;
+  background-color: #e889ae;
   height: 75px;
 }
 
 #TR05 {
-  background-color: #fc91c3;
+  background-color: #e889ae;
   height: 30px;
 }
 
 #TR05 p {
   margin-top: 10px;
   margin-bottom: 5px;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   font-size: 10px;
 }
 
@@ -56,8 +63,7 @@ table {
 }
 
 .answer {
-  background-color: #f1b0d3;
-  border: none;
+  background-color: #e1a7c0;
   color: white;
   padding: 10px;
   text-align: center;
@@ -65,20 +71,28 @@ table {
   font-size: 16px;
   width: 350px;
   margin: 10px;
-  box-shadow: 3px 3px 10px grey;
+  border-radius: 10px;
+  border-width: 2px;
+  box-shadow: 3px 3px 10px black;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  letter-spacing: 1px;
 }
 
 .action {
-  background-color: #fac43b;
-  border: none;
-  border-radius: 30px;
+  background-color: #e9a46a;
+  border:#e68884;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 10px;
   color: white;
   padding: 10px;
   text-align: center;
   font-size: 16px;
   width: 100px;
   margin: auto 10px;
-  box-shadow: 3px 3px 10px grey;
+  box-shadow: 3px 3px 10px black;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  letter-spacing: 1px;
 }
 
 .playerform {
@@ -87,7 +101,12 @@ table {
   border: none;
   padding: 20px;
   margin: 10px;
-  border-radius: 6px;
+  border-radius: 10px;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  letter-spacing: 1px;
+  background-color: #e9a46a;
+  border:#e68884;
+  border-style: solid;
 }
 
 .hidden {
