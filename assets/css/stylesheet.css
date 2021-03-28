@@ -62,6 +62,14 @@ table {
   text-align: left;
 }
 
+#playerform select {
+  background-color: #e9a46a;
+}
+
+#playerform select option {
+  background-color: #e9a46a;
+}
+
 .answer {
   background-color: #e1a7c0;
   color: white;
@@ -107,6 +115,12 @@ table {
   background-color: #e9a46a;
   border:#e68884;
   border-style: solid;
+}
+
+#question p {
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  letter-spacing: 1px;
+  color: blue;
 }
 
 .hidden {
