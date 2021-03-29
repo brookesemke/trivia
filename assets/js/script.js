@@ -71,6 +71,10 @@ questionOption4.className = "answer";
 
 // add texts and values
 rulesBtn.textContent = "RULES!";
+rulesBtn.addEventListener("click", function () {
+  window.location='rules.html';
+});
+
 playBtn.textContent = "PLAY!";
 startBtn.textContent = "START!";
 continueBtn.textContent = "NEXT!";
