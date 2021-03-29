@@ -70,11 +70,11 @@ questionOption3.className = "answer";
 questionOption4.className = "answer";
 
 // add texts and values
-rulesBtn.textContent = "Rules";
-playBtn.textContent = "Play";
-startBtn.textContent = "Start";
-continueBtn.textContent = "Next";
-finishBtn.textContent = "Finish";
+rulesBtn.textContent = "RULES!";
+playBtn.textContent = "PLAY!";
+startBtn.textContent = "START!";
+continueBtn.textContent = "NEXT!";
+finishBtn.textContent = "FINISH!";
 // nameEl.placeholder = "Tell us your name and style"; // name gathering placed on hold for v1.0
 questionOption1.value = "0";
 questionOption2.value = "1";
@@ -176,7 +176,7 @@ function askQuestion(qindex) {
   questionOption2.textContent = questions[qindex].a[1];
   questionOption3.textContent = questions[qindex].a[2];
   questionOption4.textContent = questions[qindex].a[3];
-  titleEl.textContent = "Question "+ qnum;
+  titleEl.textContent = "QUESTION "+ qnum;
   qnum++;
   startTimer();
   }
