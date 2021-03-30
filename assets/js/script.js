@@ -407,7 +407,7 @@ fetch ('https://opentdb.com/api.php?amount=10' + cat + diff + '&type=multiple')
 
               // Ask a question from the array 
     function askQuestion(qindex) {
-      if (questions.length <= qnum){
+      if (questions.length < qnum){
         gameOver();
       }
       else{
@@ -456,6 +456,7 @@ fetch ('https://opentdb.com/api.php?amount=10' + cat + diff + '&type=multiple')
  
 
   //for (var i = 0; i < questions.length; i++) {
+    
   if (buttonClicked === rightAnsOne && qnum === 2 || buttonClicked === rightAnsTwo && qnum === 3 ||buttonClicked === rightAnsThree && qnum === 4 || buttonClicked === rightAnsFour && qnum === 5 || buttonClicked === rightAnsFive && qnum === 6 || buttonClicked === rightAnsSix && qnum === 7 || buttonClicked === rightAnsSeven && qnum === 8 || buttonClicked === rightAnsEight && qnum === 9 || buttonClicked === rightAnsNine && qnum === 10 || buttonClicked === rightAnsTen && qnum === 11  ){
     clearInterval(interval);
     message.hidden = true;
