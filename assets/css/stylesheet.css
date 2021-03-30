@@ -1,0 +1,178 @@
+table {
+  width: 400px;
+  height: 600px; 
+  border-style: solid;
+  border-width: 1px;
+}
+
+#TR01 {
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  height: 100px;
+  background-color: #d16491;
+  color: white;
+}
+
+#TR01 h1 {
+  color: white;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: xx-large;
+  line-height: 8px;
+  letter-spacing: 1px;
+}
+
+#TR01 h3 {
+  color: white;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: large;
+  letter-spacing: 1px;
+}
+
+#TR02 {
+  height: 50px;
+  background-color: #d16491;
+}
+
+#TR02 p {
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  letter-spacing: 1px;
+}
+
+#TR03 {
+  background-color: #e889ae;
+}
+
+#TR04 {
+  background-color: #e889ae;
+  height: 75px;
+}
+
+#TR05 {
+  background-color: #e889ae;
+  height: 30px;
+}
+
+#TR05 p {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 10px;
+}
+
+#TR06 {
+  background-color: #e889ae;
+  height: 30px;
+}
+
+#TR06 ol li {
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 15px;
+  color: white;
+  text-align: left;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+}
+
+#titlebar {
+  text-align: left;
+}
+
+#titlebar h3 {
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  text-align: center;
+}
+
+#playerform select {
+  background-color: #e9a46a;
+}
+
+#playerform select option {
+  background-color: #e9a46a;
+}
+
+button {
+  background-color: #e9a46a;
+  border:#e68884;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 10px;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  font-size: 16px;
+  width: 100px;
+  margin: auto 10px;
+  box-shadow: 3px 3px 10px black;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  letter-spacing: 1px;
+}
+
+
+
+.answer {
+  background-color: #e1a7c0;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  display: block;
+  font-size: 16px;
+  width: 350px;
+  margin: 10px;
+  border-radius: 10px;
+  border-width: 2px;
+  box-shadow: 3px 3px 10px black;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  letter-spacing: 1px;
+}
+
+.action {
+  background-color: #e9a46a;
+  border:#e68884;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 10px;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  font-size: 16px;
+  width: 100px;
+  margin: auto 10px;
+  box-shadow: 3px 3px 10px black;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  letter-spacing: 1px;
+}
+
+.playerform {
+  display: block;
+  width: 250px;
+  border: none;
+  padding: 20px;
+  margin: 10px;
+  border-radius: 10px;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  letter-spacing: 1px;
+  background-color: #e9a46a;
+  border:#e68884;
+  border-style: solid;
+}
+
+#question p {
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  letter-spacing: 1px;
+  color: blue;
+}
+
+.hidden {
+  visibility: hidden;
+  width: 0px;
+  height: 0px;
+  margin: 0px;
+  padding: 0px;
+}
+.blink {
+  animation: blinker 1s linear infinite;
+}
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}

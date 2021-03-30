@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Riddle Me This...</title>
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
@@ -20,7 +21,8 @@
 
     <link rel="stylesheet" href="./assets/css/stylesheet.css" type="text/css" />
   </head>
-  <body onload="checkApi()">
+  
+  <body>
     <!-- ALL YOU CARE ABOUT ARE THE DIVS WITH AN ID. YOU CAN IGNORE THE TABLE AND THE HARCODED STYLES -->
 
     <table>
@@ -32,25 +34,38 @@
       </tr>
       <tr id="TR02">
         <th align="left">
-          <div id="titlebar"></div>
+          <div id="titlebar">
+            <h3>
+              RULES!
+            </h3>
+          </div>
         </th>
-        <th align="right">
-          <div id="timer"></div>
-        </th>
+
       </tr>
-      <tr id="TR03">
+      <tr id="TR06">
         <th colspan="2" align="center">
-          <div id="welcome"></div>
-          <div id="playerform"></div>
-          <div id="questions"></div>
-          <div id="gifs"></div>
-          <div id="results"></div>
+          <p>
+            <ol>
+                <li> First, have fun... don't take this too seriously... unless you want to... then you should.</li>
+                <li> Second, now that you're having fun... STOP! If you let this bus get under 50, we're all screwed!</li>
+                <li> Third, you seriously need rules?</li>
+                <li> Fourth, obviously you do if you're still reading.</li>
+                <li> Basket, okay so it's pretty simple, put in your name, select a topic and level of difficutly, and hit start!</li>
+                <li> Choo Choo, oh yeah, try to answer the questions before the timer expires (nobody wants to be insulted thru GIFS!</li>
+                <li> Pi, After you're done playing, decide if you want to be embarrased some more or if you've had enough and want to go back to idolizing strangers on Instagram.
+                    If you want go again, you guessed it, hit "AGAIN!" and if not... well I hope you find happiness in the indiffrent eyes of strangers.
+                </li>
+            </ol>
+        </p>
+          
         </th>
       </tr>
       <tr id="TR04">
         <th colspan="2" align="center">
-          <div id="actions"></div>
-          <div id="messages"></div>
+
+        <div class="back">
+          <a href="index.html"><button>BACK!</button></a>
+        </div>
         </th>
       </tr>
       <!-- Should this be a footer? meaning; always present? -->
@@ -61,13 +76,37 @@
       </tr>
     </table>
 
+    <script src="./assets/js/script.js"></script>
+
     <!-- Compressed Foundation JavaScript -->
+
     <script
       src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js"
       integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o="
       crossorigin="anonymous"
     ></script>
 
-    <script src="./assets/js/script.js"></script>
+    
   </body>
 </html>
+
+
+<div class="row">
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
