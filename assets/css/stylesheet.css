@@ -14,14 +14,11 @@ table {
   color: white;
   font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   line-height: 1;
-  letter-spacing: 10%;
 }
 
 #TR01 h3 {
   color: white;
   font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-
-  letter-spacing: 1px;
 }
 
 #TR02 {
@@ -31,7 +28,6 @@ table {
 
 #TR02 p {
   font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  letter-spacing: 10%;
 }
 
 #TR03 {
@@ -52,7 +48,7 @@ table {
   margin-top: 10px;
   margin-bottom: 5px;
   font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  font-size: 10px;
+  font-size: 10%;
 }
 
 #TR06 {
@@ -66,7 +62,6 @@ table {
   color: white;
   text-align: left;
   margin-bottom: 15px;
-  letter-spacing: 1px;
 }
 
 #titlebar {
