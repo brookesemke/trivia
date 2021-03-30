@@ -1,6 +1,4 @@
 table {
-  width: 400px;
-  height: 600px; 
   border-style: solid;
   border-width: 1px;
 }
@@ -15,15 +13,14 @@ table {
 #TR01 h1 {
   color: white;
   font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  font-size: xx-large;
-  line-height: 8px;
-  letter-spacing: 1px;
+  line-height: 1;
+  letter-spacing: 10%;
 }
 
 #TR01 h3 {
   color: white;
   font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  font-size: large;
+
   letter-spacing: 1px;
 }
 
@@ -34,7 +31,7 @@ table {
 
 #TR02 p {
   font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  letter-spacing: 1px;
+  letter-spacing: 10%;
 }
 
 #TR03 {
@@ -89,24 +86,35 @@ table {
   background-color: #e9a46a;
 }
 
-button {
-  background-color: #e9a46a;
-  border:#e68884;
-  border-style: solid;
-  border-width: 2px;
-  border-radius: 10px;
+.button {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 0 1rem 0;
+  padding: 0.85em 1em;
   color: white;
-  padding: 10px;
-  text-align: center;
-  font-size: 16px;
-  width: 100px;
-  margin: auto 10px;
+  border: 1px solid transparent;
+  background-color: #e9a46a;
+  border-radius: 10px;
   box-shadow: 3px 3px 10px black;
+  -webkit-transition: background-color 0.25s ease-out, color 0.25s ease-out;
+  transition: background-color 0.25s ease-out, color 0.25s ease-out;
+  font-family: inherit;
+  font-size: 0.9rem;
+  -webkit-appearance: none;
+  line-height: 1;
+  text-align: center;
+  cursor: pointer; }
+  [data-whatinput='mouse'] .button {
+    outline: 0; }
+
+.button:hover, .button:focus {
+  background-color: #e9a46a;
+  color: #fefefe; }
+
+a {
+  color: white;
   font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  letter-spacing: 1px;
 }
-
-
 
 .answer {
   background-color: #e1a7c0;
