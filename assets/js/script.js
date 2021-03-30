@@ -1,24 +1,102 @@
+function checkApi() {   
+ 
+  function makeHappy() {
+   fetch ('https://api.giphy.com/v1/gifs/search?q=happy&rating=g&api_key=yhspGREo8A4hP2vDCFvpE5d93COdKp5R')
+
+   .then(function(response) {
+       return response.json()
+       .then(function(happyGif) {
+         console.log(response)
+           //var to make a happy gif, should iterate to the next 'happy' gif in the array afterwards can test by repeating the variable, it does work
+           let i = Math.floor( Math.random() * 50)
+           var happyGifOne = (happyGif.data[i].images.original.url)
+           winnerGif.setAttribute('src', happyGifOne)
+           winnerGif.width = "350";      
+       })
+   })
+  }
+
+  function makeSad() {
+   fetch ('https://api.giphy.com/v1/gifs/search?q=sad&rating=g&api_key=yhspGREo8A4hP2vDCFvpE5d93COdKp5R')
+
+   .then(function(response) {
+       return response.json()
+       .then(function(sadGif) {
+           //var to make a sad gif, should iterate to the next 'sad' gif in the array afterwards can test by repeating the variable, it does work
+           let i = Math.floor( Math.random() * 50)
+           var sadGifOne = (sadGif.data[i].images.original.url)
+           i++;
+           loserGif.setAttribute('src', sadGifOne);
+           loserGif.width = "350";
+       })
+   })
+  }
+//not currently using a celebrate gif, replaced with charles norris
+/*      fetch ('https://api.giphy.com/v1/gifs/search?q=celebration&rating=g&api_key=yhspGREo8A4hP2vDCFvpE5d93COdKp5R')
+
+   .then(function(response) {
+       return response.json()
+       .then(function(celebrateGif) {
+           console.log(celebrateGif)
+
+           //ended up randomizing all so the resulting gif isnt the same every time
+           let i = Math.floor( Math.random() * 50)
+           var celebrateGifOne = (celebrateGif.data[i].images.original.url)
+           console.log(celebrateGifOne)
+       })
+   })
+*/
+   
+   fetch ('https://api.giphy.com/v1/gifs/search?q=knowledge&rating=g&api_key=yhspGREo8A4hP2vDCFvpE5d93COdKp5R')
+
+   .then(function(response) {
+       return response.json()
+       .then(function(playGif) {
+           let i = Math.floor( Math.random() * 50)
+           var playGifOne = (playGif.data[i].images.original.url)
+           welcomeGif.setAttribute('src', playGifOne);               
+           welcomeGif.width = "350";
+       })
+   })
+
+   fetch ('https://api.giphy.com/v1/gifs/search?q=out-of-time&rating=g&api_key=yhspGREo8A4hP2vDCFvpE5d93COdKp5R')
+
+   .then(function(response) {
+       return response.json()
+       .then(function(timeGif) {
+           let i = Math.floor( Math.random() * 50)
+           var timeGifOne = (timeGif.data[i].images.original.url)
+           timesupGif.setAttribute('src', timeGifOne);               
+           timesupGif.width = "350";
+       })
+   })
+
+   fetch ('https://api.giphy.com/v1/gifs/search?q=chuck-norris&rating=g&api_key=yhspGREo8A4hP2vDCFvpE5d93COdKp5R')
+
+   .then(function(response) {
+       return response.json()
+       .then(function(chuckGif) {
+           let i = Math.floor( Math.random() * 50)
+           var chuckGifOne = (chuckGif.data[i].images.original.url)
+           resultGif.setAttribute('src', chuckGifOne);               
+           resultGif.width = "350";
+       })
+   })
+
+
+
+
 //global variables
 var secondsLeft = 10; // how much time per question?
 var score = 0;
 var topics = ["Sports","Movies","Music","Video Games","Cars"];
 var levels = ["Easy","Medium","Hard"];
+
+
 var qindex = 0;
 var qnum = 1;
 
-// questions and answers (TEMPORARILY HARDCODED HERE, SHOULD BE READ FROM JSON?)
-var questions = [
-  { q: "This is Question number 1", a: ["A", "B", "C", "D"], ca: "3" },
-  { q: "This is Question number 2", a: ["A", "B", "C", "D"], ca: "2" },
-  { q: "This is Question number 3", a: ["A", "B", "C", "D"], ca: "1" },
-  { q: "This is Question number 4", a: ["A", "B", "C", "D"], ca: "0" },
-//  { q: "This is Question number 5", a: ["A", "B", "C", "D"], ca: "3" },
-//  { q: "This is Question number 6", a: ["A", "B", "C", "D"], ca: "2" },
-//  { q: "This is Question number 7", a: ["A", "B", "C", "D"], ca: "1" },
-//  { q: "This is Question number 8", a: ["A", "B", "C", "D"], ca: "0" },
-//  { q: "This is Question number 9", a: ["A", "B", "C", "D"], ca: "3" },
-//  { q: "This is Question number 10", a: ["A", "B", "C", "D"], ca: "2" },
-];
+
 
 // identify the divs in the HTML where we will inserting elements
 var titlebarEl = document.querySelector("#titlebar");
@@ -37,8 +115,7 @@ var timeEl = document.createElement("p");
 var rulesBtn = document.createElement("button");
 var playBtn = document.createElement("button");
 //var nameEl = document.createElement("input"); // name gathering placed on hold for v1.0
-var topicsEl = document.createElement("select")
-var levelsEl = document.createElement("select")
+
 var startBtn = document.createElement("button");
 var continueBtn = document.createElement("button");
 var finishBtn = document.createElement("button");
@@ -61,8 +138,7 @@ playBtn.className = "action";
 startBtn.className = "action";
 finishBtn.className = "action";
 // nameEl.className = "playerform"; // name gathering placed on hold for v1.0
-topicsEl.className = "playerform";
-levelsEl.className = "playerform";
+
 continueBtn.className = "action";
 questionOption1.className = "answer";
 questionOption2.className = "answer";
@@ -73,30 +149,17 @@ questionOption4.className = "answer";
 rulesBtn.textContent = "RULES!";
 rulesBtn.addEventListener("click", function () {
   window.location='rules.html';
-});
-
+});  
 playBtn.textContent = "PLAY!";
 startBtn.textContent = "START!";
 continueBtn.textContent = "NEXT!";
 finishBtn.textContent = "FINISH!";
+
 // nameEl.placeholder = "Tell us your name and style"; // name gathering placed on hold for v1.0
 questionOption1.value = "0";
 questionOption2.value = "1";
 questionOption3.value = "2";
 questionOption4.value = "3";
-
-// TEMP GIFs
-welcomeGif.src = "https://thumbs.gfycat.com/PeskyFirmDragon-size_restricted.gif"
-welcomeGif.width = "350";
-loserGif.src = "https://i.gifer.com/49f1.gif";
-loserGif.width = "350";
-winnerGif.src = "https://i.gifer.com/2Nli.gif";
-winnerGif.width = "350";
-timesupGif.src ="https://i.gifer.com/2lwS.gif"
-timesupGif.width = "350";
-resultGif.src ="https://i.gifer.com/FPB.gif"
-resultGif.width = "350";
-//confused gif https://i.gifer.com/HyPJ.gif
 
 // Append items to the divs
 titlebarEl.appendChild(titleEl);
@@ -104,178 +167,384 @@ countdownEl.appendChild(timeEl);
 actionsEl.appendChild(rulesBtn);
 actionsEl.appendChild(playBtn);
 // playerformEl.appendChild(nameEl); // name gathering placed on hold for v1.0
-playerformEl.appendChild(topicsEl);
-playerformEl.appendChild(levelsEl);
+
 actionsEl.appendChild(startBtn);
 actionsEl.appendChild(continueBtn);
-questionsEl.appendChild(questionTitle);
-questionsEl.appendChild(questionOption1);
-questionsEl.appendChild(questionOption2);
-questionsEl.appendChild(questionOption3);
-questionsEl.appendChild(questionOption4);
+
 messagesEl.appendChild(message);
 welcomegifEl.appendChild(welcomeGif);
 
-//Create and append the topics 
-for (var i = 0; i < topics.length; i++) {
-  var topic = document.createElement("option");
-  topic.setAttribute("value",topics[i]);
-  topic.text = topics[i];
-  topicsEl.appendChild(topic);
-}
 
-//Create and append the difficulty levels 
-for (var i = 0; i < levels.length; i++) {
-  var level = document.createElement("option");
-  level.setAttribute("value",levels[i]);
-  level.text = levels[i];
-  levelsEl.appendChild(level);
-}
 
 // Start Game
 function welcome() {
-  titleEl.textContent = "LET'S PLAY A GAME!";
-  playerformEl.hidden = true;
-  questionsEl.hidden = true;
-  startBtn.className = "hidden";
-  continueBtn.className = "hidden";
+titleEl.textContent = "LET'S PLAY A GAME!";
+playerformEl.hidden = true;
+questionsEl.hidden = true;
+startBtn.className = "hidden";
+continueBtn.className = "hidden";
 }
 
 welcome();
 
 // when play button is clicked... 
 playBtn.addEventListener("click", function () {
-  titleEl.textContent = "PICK A TOPIC AND DIFFICULTY LEVEL...";
-  rulesBtn.className = "hidden";
-  playBtn.className = "hidden";
-  startBtn.className = "action";
-  welcomegifEl.hidden = true;
-  playerformEl.hidden = false;
-})
+titleEl.textContent = "PICK A TOPIC AND DIFFICULTY LEVEL...";
+rulesBtn.className = "hidden";
+playBtn.className = "hidden";
+startBtn.className = "action";
+welcomegifEl.hidden = true;
+playerformEl.hidden = false;
+
+var topicsEl = document.createElement("select")
+var levelsEl = document.createElement("select")
+
+playerformEl.appendChild(topicsEl);
+playerformEl.appendChild(levelsEl);
+
+topicsEl.className = "playerform";
+levelsEl.className = "playerform";
+
+//added IDs to differentiate the dropdowns
+topicsEl.setAttribute('id', 'topicField')
+levelsEl.setAttribute('id', 'levelField')
+
+//Create and append the topics 
+for (var i = 0; i < topics.length; i++) {
+ var topic = document.createElement("option");
+ topic.setAttribute("value",topics[i]);
+ topic.text = topics[i];
+ topicsEl.appendChild(topic);
+}
+
+//Create and append the difficulty levels 
+for (var i = 0; i < levels.length; i++) {
+ var level = document.createElement("option");
+ level.setAttribute("value",levels[i]);
+ level.text = levels[i];
+ levelsEl.appendChild(level);
+}
 
 //When start button is clicked... 
 startBtn.addEventListener("click", function () {
-// name gathering placed on hold for v1.0
-//  if (nameEl.value === "") {
-//    alert("You must type in your name");
-//    return;
-//  }
-//  else {
-//  localStorage.setItem("player", nameEl.value);
-  startBtn.className = "hidden";
-  playerformEl.hidden = true;
-  questionsEl.hidden = false;
-  askQuestion(qindex);
-//  }
-})
 
-// Ask a question from the array 
-function askQuestion(qindex) {
-  if (questions.length < qnum){
-    gameOver();
-  }
-  else{
-  questionTitle.textContent = questions[qindex].q;
-  questionOption1.textContent = questions[qindex].a[0];
-  questionOption2.textContent = questions[qindex].a[1];
-  questionOption3.textContent = questions[qindex].a[2];
-  questionOption4.textContent = questions[qindex].a[3];
-  titleEl.textContent = "QUESTION "+ qnum;
-  qnum++;
-  startTimer();
+startBtn.className = "hidden";
+playerformEl.hidden = true;
+questionsEl.hidden = false;
+
+ 
+//created an array of only the selected option
+var topicChoice = [];
+for (var option of document.getElementById('topicField').options) {
+  if (option.selected) {
+    topicChoice.push(option.value)
   }
 }
 
-// ask next question
-continueBtn.addEventListener("click", function () {
-    gifsEl.hidden = true;
-    questionsEl.hidden = false;
-    continueBtn.hidden = true;
-    gifsEl.innerHTML ="";
-    qindex++;
+//pulled the value of the selected option array
+var topicPicked = topicChoice[0]
+
+if (topicPicked === "Sports") {
+  var cat = "&category=21"
+}
+if (topicPicked === "Movies") {
+  var cat = "&category=11"
+}
+if (topicPicked === "Music") {
+  var cat = "&category=12"
+}
+if (topicPicked === "Video Games") {
+  var cat = "&category=15"
+}
+if (topicPicked === "Cars") {
+  var cat = "&category=28"
+}
+console.log(cat)
+
+//created an array of only the selected option
+var levelChoice = [];
+for (var option of document.getElementById('levelField').options) {
+  if (option.selected) {
+    levelChoice.push(option.value)
+  }
+}
+
+//pulled the value of the selected option array
+var levelPicked = levelChoice[0]
+
+if (levelPicked === "Easy") {
+  var diff = "&difficulty=easy"
+}
+if (levelPicked === "Medium") {
+  var diff = "&difficulty=medium"
+}
+if (levelPicked === "Hard") {
+  var diff = "&difficulty=hard"
+}
+console.log(diff)
+
+//https://opentdb.com/api.php?amount=10&category=21&difficulty=easy&type=multiple  api for all choices
+// cat 21 is sports
+// cat 11 is movies
+// cat 15 is vidya games
+// cat 28 is cars
+// cat 12 is music
+
+
+fetch ('https://opentdb.com/api.php?amount=10' + cat + diff + '&type=multiple')
+
+.then(function(response) {
+  return response.json()
+  .then(function(triviaData) {
+      console.log(triviaData)
+
+      //var for question
+
+      var questionOne = (triviaData.results[0].question)
+      var questionTwo = (triviaData.results[1].question)
+      var questionThree = (triviaData.results[2].question)
+      var questionFour = (triviaData.results[3].question)
+      var questionFive = (triviaData.results[4].question)
+      var questionSix = (triviaData.results[5].question)
+      var questionSeven = (triviaData.results[6].question)
+      var questionEight = (triviaData.results[7].question)
+      var questionNine = (triviaData.results[8].question)
+      var questionTen = (triviaData.results[9].question)
+
+
+      //var for answer
+
+      var answerOne = (triviaData.results[0].correct_answer)
+      var answerTwo = (triviaData.results[1].correct_answer)
+      var answerThree = (triviaData.results[2].correct_answer)
+      var answerFour = (triviaData.results[3].correct_answer)
+      var answerFive = (triviaData.results[4].correct_answer)
+      var answerSix = (triviaData.results[5].correct_answer)
+      var answerSeven = (triviaData.results[6].correct_answer)
+      var answerEight = (triviaData.results[7].correct_answer)
+      var answerNine = (triviaData.results[8].correct_answer)
+      var answerTen = (triviaData.results[9].correct_answer)
+      
+
+      //var for difficulty
+
+      var difficultyOne = (triviaData.results[0].difficulty)
+      console.log(difficultyOne)
+
+      //var for category
+
+      var categoryOne = (triviaData.results[0].category)
+      console.log(categoryOne)
+
+      //var for type, i.e. multiple or boolean
+
+      var typeOne = (triviaData.results[0].type)
+      console.log(typeOne)
+
+      //var for incorrect answers, one result for T/F, 3 results for multiple choice, displays array
+
+      var incAnsOne = (triviaData.results[0].incorrect_answers)
+      var incAnsTwo = (triviaData.results[1].incorrect_answers)
+      var incAnsThree = (triviaData.results[2].incorrect_answers)
+      var incAnsFour = (triviaData.results[3].incorrect_answers)
+      var incAnsFive = (triviaData.results[4].incorrect_answers)
+      var incAnsSix = (triviaData.results[5].incorrect_answers)
+      var incAnsSeven = (triviaData.results[6].incorrect_answers)
+      var incAnsEight = (triviaData.results[7].incorrect_answers)
+      var incAnsNine = (triviaData.results[8].incorrect_answers)
+      var incAnsTen = (triviaData.results[9].incorrect_answers)
+
+      
+     
+      //pushes the correct answer into the incAnsOne array with the incorrect answers
+      //sorts it, randomizing where the correct answer appears in the array
+      incAnsOne.push(answerOne)
+      incAnsOne.sort()
+      incAnsTwo.push(answerTwo)
+      incAnsTwo.sort()
+      incAnsThree.push(answerThree)
+      incAnsThree.sort()
+      incAnsFour.push(answerFour)
+      incAnsFour.sort()
+      incAnsFive.push(answerFive)
+      incAnsFive.sort()
+      incAnsSix.push(answerSix)
+      incAnsSix.sort()
+      incAnsSeven.push(answerSeven)
+      incAnsSeven.sort()
+      incAnsEight.push(answerEight)
+      incAnsEight.sort()
+      incAnsNine.push(answerNine)
+      incAnsNine.sort()
+      incAnsTen.push(answerTen)
+      incAnsTen.sort()
+      console.log(incAnsOne)
+      correctAnsArr = []
+      correctAnsArr.push(answerOne)
+      console.log(correctAnsArr)
+
+      questionsEl.appendChild(questionTitle);
+      questionsEl.appendChild(questionOption1);
+      questionsEl.appendChild(questionOption2);
+      questionsEl.appendChild(questionOption3);
+      questionsEl.appendChild(questionOption4);
+
+       // questions and answers (TEMPORARILY HARDCODED HERE, SHOULD BE READ FROM JSON?)
+      //this pulls the questions and lists the answers into the game, correct answer does not work however
+       var questions = [
+      { q: questionOne, a: incAnsOne, ca: correctAnsArr },
+      { q: questionTwo, a: incAnsTwo, ca: correctAnsArr },
+      { q: questionThree, a: incAnsThree, ca: correctAnsArr },
+      { q: questionFour, a: incAnsFour, ca: correctAnsArr },
+      { q: questionFive, a: incAnsFive, ca: correctAnsArr },
+      { q: questionSix, a: incAnsSix, ca: correctAnsArr },
+      { q: questionSeven, a: incAnsSeven, ca: correctAnsArr },
+      { q: questionEight, a: incAnsEight, ca: correctAnsArr },
+      { q: questionNine, a: incAnsNine, ca: correctAnsArr },
+      { q: questionTen, a: incAnsTen, ca: correctAnsArr },
+
+    ];
+
+              // Ask a question from the array 
+    function askQuestion(qindex) {
+      if (questions.length <= qnum){
+        gameOver();
+      }
+      else{
+      questionTitle.textContent = questions[qindex].q;
+      questionOption1.textContent = questions[qindex].a[0];
+      questionOption2.textContent = questions[qindex].a[1];
+      questionOption3.textContent = questions[qindex].a[2];
+      questionOption4.textContent = questions[qindex].a[3];
+      titleEl.textContent = "Question "+ qnum;
+      qnum++;
+      startTimer();
+      }
+    }
+
     askQuestion(qindex);
+
+    continueBtn.addEventListener("click", function () {
+      questionsEl.hidden = false;
+      continueBtn.hidden = true;
+      gifsEl.innerHTML ="";
+      qindex++;
+      askQuestion(qindex);
+      
+  })
+  
+
+   // Check answers
+  questionsEl.addEventListener("click", function (event) {
+  if (event.target.matches(".answer")) {
+  var buttonClicked = event.target.value;
+  console.log(buttonClicked);
+  //console.log(incAnsOne.length);
+  //console.log(incAnsOne);
+  //console.log(correctAnsArr);
+  //console.log(incAnsOne.indexOf(correctAnsArr));
+  var rightAnsOne = JSON.stringify(incAnsOne.indexOf(answerOne));
+  var rightAnsTwo = JSON.stringify(incAnsTwo.indexOf(answerTwo));
+  var rightAnsThree = JSON.stringify(incAnsThree.indexOf(answerThree));
+  var rightAnsFour = JSON.stringify(incAnsFour.indexOf(answerFour));
+  var rightAnsFive = JSON.stringify(incAnsFive.indexOf(answerFive));
+  var rightAnsSix = JSON.stringify(incAnsSix.indexOf(answerSix));
+  var rightAnsSeven = JSON.stringify(incAnsSeven.indexOf(answerSeven));
+  var rightAnsEight = JSON.stringify(incAnsEight.indexOf(answerEight));
+  var rightAnsNine = JSON.stringify(incAnsNine.indexOf(answerNine));
+  var rightAnsTen = JSON.stringify(incAnsTen.indexOf(answerTen));
+ 
+
+  //for (var i = 0; i < questions.length; i++) {
+  if (buttonClicked === rightAnsOne && qnum === 2 || buttonClicked === rightAnsTwo && qnum === 3 ||buttonClicked === rightAnsThree && qnum === 4 || buttonClicked === rightAnsFour && qnum === 5 || buttonClicked === rightAnsFive && qnum === 6 || buttonClicked === rightAnsSix && qnum === 7 || buttonClicked === rightAnsSeven && qnum === 8 || buttonClicked === rightAnsEight && qnum === 9 || buttonClicked === rightAnsNine && qnum === 10 || buttonClicked === rightAnsTen && qnum === 11  ){
+    clearInterval(interval);
+    message.hidden = true;
+    secondsLeft = 10;
+    questionsEl.hidden = true;
+    gifsEl.hidden = false;
+    gifsEl.innerHTML = " ";
+    makeHappy();
+    gifsEl.appendChild(winnerGif);
+    continueBtn.hidden = false;
+    continueBtn.className = "action";
+    score++;
+  }
+  else {
+    clearInterval(interval);
+    message.hidden = true;
+    secondsLeft = 10;
+    questionsEl.hidden = true;
+    gifsEl.hidden = false;
+    makeSad();
+    gifsEl.appendChild(loserGif);
+    continueBtn.hidden = false;
+    continueBtn.className = "action";
+  }
+
+
+}
 })
+}  
+)}
+)
+})
+})
+
+
+
+// ask next question
 
 // Timer and timed control events
 function startTimer() {
-  interval = setInterval(function () {
-    secondsLeft--;
-    timeLeft();
-    if (secondsLeft <= 0) {
-      clearInterval(interval);
-      timesUp();
-      secondsLeft = 10;
-    }
-    else if (secondsLeft < 5) {
-      hurryUp();
-    }
-  }, 1000);
+interval = setInterval(function () {
+ secondsLeft--;
+ timeLeft();
+ if (secondsLeft <= 0) {
+   clearInterval(interval);
+   timesUp();
+   secondsLeft = 10;
+ }
+ else if (secondsLeft < 5) {
+   hurryUp();
+ }
+}, 1000);
 }
 
 // functions called by startTimer above
 function timeLeft() {
-  timeEl.textContent = "TIME: " + secondsLeft;
+timeEl.textContent = "TIME: " + secondsLeft;
 }
 
 function hurryUp() {
-  message.hidden = false;
-  message.textContent = "HURRY! HURRY! HURRY!";
-  message.className = "blink";
+message.hidden = false;
+message.textContent = "HURRY! HURRY! HURRY!";
+message.className = "blink";
 }
 
 function timesUp() {
-  questionsEl.hidden = true;
-  message.hidden = true;
-  gifsEl.hidden = false;
-  gifsEl.appendChild(timesupGif);
-  continueBtn.hidden = false;
-  continueBtn.className = "action";
+questionsEl.hidden = true;
+message.hidden = true;
+gifsEl.hidden = false;
+gifsEl.appendChild(timesupGif);
+continueBtn.hidden = false;
+continueBtn.className = "action";
 }
 
 function gameOver() {
-  resultsEl.appendChild(result);
-  result.textContent = "Your score was " + score
-  resultsEl.appendChild(resultGif);
-  questionsEl.hidden = true;
-  message.hidden = true;
-  gifsEl.hidden = true;
-  continueBtn.hidden = true;
-  continueBtn.className = "hidden";
-  actionsEl.appendChild(finishBtn);
+resultsEl.appendChild(result);
+result.textContent = "Your score was " + score
+resultsEl.appendChild(resultGif);
+questionsEl.hidden = true;
+message.hidden = true;
+gifsEl.hidden = true;
+continueBtn.hidden = true;
+continueBtn.className = "hidden";
+actionsEl.appendChild(finishBtn);
 }
 
 finishBtn.addEventListener("click", function () {
-  location.reload();
+location.reload();
 })
 
-// Check answers
-questionsEl.addEventListener("click", function (event) {
-  if (event.target.matches(".answer")) {
-  var buttonClicked = event.target.value;
-  //for (var i = 0; i < questions.length; i++) {
-    if (buttonClicked === questions[qindex].ca){
-      clearInterval(interval);
-      message.hidden = true;
-      secondsLeft = 10;
-      questionsEl.hidden = true;
-      gifsEl.hidden = false;
-      gifsEl.appendChild(winnerGif);
-      continueBtn.hidden = false;
-      continueBtn.className = "action";
-      score++;
-    }
-    else {
-      clearInterval(interval);
-      message.hidden = true;
-      secondsLeft = 10;
-      questionsEl.hidden = true;
-      gifsEl.hidden = false;
-      gifsEl.appendChild(loserGif);
-      continueBtn.hidden = false;
-      continueBtn.className = "action";
-    }
 
-//}
 }
-
-})
