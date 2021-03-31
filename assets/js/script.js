@@ -356,14 +356,6 @@ fetch ('https://opentdb.com/api.php?amount=10' + cat + diff + '&type=multiple')
       var parseTen = questionTen.replace(/&#039;/g, "\'");
       var questionTen = parseTen.replace(/&quot;/g,"\"" );
 
-      // this script changes Tim Burton&#039;s 1989 movie &quot;Batman&quot;
-      // into: "Tim Burton's 1989 movie "Batman"
-      //var encoded = JSON.stringify(triviaData.results[0].question);
-      //var parseOne = questionOne.replace(/&#039;/g, "\'");
-      //var questionOne = parseSingle.replace(/&quot;/g,"\"" );
-      //console.log(encoded);
-      //console.log(parsedouble);
-
       //var for answer
 
       var answerOne = (triviaData.results[0].correct_answer)
