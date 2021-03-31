@@ -1,7 +1,18 @@
 function checkApi() {   
  
   function makeHappy() {
-   fetch ('https://api.giphy.com/v1/gifs/search?q=happy&rating=g&api_key=yhspGREo8A4hP2vDCFvpE5d93COdKp5R')
+    
+    var happyGif = Math.floor(Math.random()*7)
+    if (happyGif === 0) { happyGifRandom = "winner-winner-chicken-dinner" }
+    if (happyGif === 1) { happyGifRandom = "we-are-the-champions" }
+    if (happyGif === 2) { happyGifRandom = "go-girl" }
+    if (happyGif === 3) { happyGifRandom = "who-da-man" }
+    if (happyGif === 4) { happyGifRandom = "what-what" }
+    if (happyGif === 5) { happyGifRandom = "boo-ya" }
+    if (happyGif === 6) { happyGifRandom = "fo-sho" }
+    if (happyGif === 7) { happyGifRandom = "you-da-bomb" }
+
+   fetch ('https://api.giphy.com/v1/gifs/search?q=' + happyGifRandom + '&rating=g&api_key=yhspGREo8A4hP2vDCFvpE5d93COdKp5R')
 
    .then(function(response) {
        return response.json()
@@ -17,7 +28,20 @@ function checkApi() {
   }
 
   function makeSad() {
-   fetch ('https://api.giphy.com/v1/gifs/search?q=sad&rating=g&api_key=yhspGREo8A4hP2vDCFvpE5d93COdKp5R')
+
+    var sadGif = Math.round(Math.random()*9)
+    if (sadGif === 0) { sadGifRandom = "epic-fail" }
+    if (sadGif === 1) { sadGifRandom = "loooser" }
+    if (sadGif === 2) { sadGifRandom = "slimed" }
+    if (sadGif === 3) { sadGifRandom = "better-luck-next-time" }
+    if (sadGif === 4) { sadGifRandom = "KO" }
+    if (sadGif === 5) { sadGifRandom = "OMG" }
+    if (sadGif === 6) { sadGifRandom = "oh-no" }
+    if (sadGif === 7) { sadGifRandom = "you-wish" }
+    if (sadGif === 8) { sadGifRandom = "you-stupid" }
+    if (sadGif === 9) { sadGifRandom = "but-why" }
+
+   fetch ('https://api.giphy.com/v1/gifs/search?q=' + sadGifRandom + '&rating=g&api_key=yhspGREo8A4hP2vDCFvpE5d93COdKp5R')
 
    .then(function(response) {
        return response.json()
@@ -46,8 +70,15 @@ function checkApi() {
        })
    })
 */
-   
-   fetch ('https://api.giphy.com/v1/gifs/search?q=knowledge&rating=g&api_key=yhspGREo8A4hP2vDCFvpE5d93COdKp5R')
+      var welcomeGifA = Math.round(Math.random()*3)
+        if (welcomeGifA === 0) { welcomeGifRandom = "knowledge" }
+        if (welcomeGifA === 1) { welcomeGifRandom = "on-your-mark" }
+        if (welcomeGifA === 2) { welcomeGifRandom = "lets-go" }
+        if (welcomeGifA === 3) { welcomeGifRandom = "you-got-this" }
+    console.log(welcomeGifA)
+
+
+    fetch ('https://api.giphy.com/v1/gifs/search?q=' + welcomeGifRandom + '&rating=g&api_key=yhspGREo8A4hP2vDCFvpE5d93COdKp5R')
 
    .then(function(response) {
        return response.json()
@@ -56,18 +87,6 @@ function checkApi() {
            var playGifOne = (playGif.data[i].images.original.url)
            welcomeGif.setAttribute('src', playGifOne);               
            welcomeGif.width = "350";
-       })
-   })
-
-   fetch ('https://api.giphy.com/v1/gifs/search?q=out-of-time&rating=g&api_key=yhspGREo8A4hP2vDCFvpE5d93COdKp5R')
-
-   .then(function(response) {
-       return response.json()
-       .then(function(timeGif) {
-           let i = Math.floor( Math.random() * 50)
-           var timeGifOne = (timeGif.data[i].images.original.url)
-           timesupGif.setAttribute('src', timeGifOne);               
-           timesupGif.width = "350";
        })
    })
 
@@ -146,14 +165,11 @@ questionOption3.className = "answer";
 questionOption4.className = "answer";
 
 // add texts and values
-rulesBtn.textContent = "RULES!";
-rulesBtn.addEventListener("click", function () {
-  window.location='rules.html';
-});  
-playBtn.textContent = "PLAY!";
-startBtn.textContent = "START!";
-continueBtn.textContent = "NEXT!";
-finishBtn.textContent = "FINISH!";
+rulesBtn.textContent = "Rules";
+playBtn.textContent = "Play";
+startBtn.textContent = "Start";
+continueBtn.textContent = "Next";
+finishBtn.textContent = "Finish";
 
 // nameEl.placeholder = "Tell us your name and style"; // name gathering placed on hold for v1.0
 questionOption1.value = "0";
@@ -300,16 +316,16 @@ fetch ('https://opentdb.com/api.php?amount=10' + cat + diff + '&type=multiple')
 
       //var for question
 
-      var questionOne = (triviaData.results[0].question)
-      var questionTwo = (triviaData.results[1].question)
-      var questionThree = (triviaData.results[2].question)
-      var questionFour = (triviaData.results[3].question)
-      var questionFive = (triviaData.results[4].question)
-      var questionSix = (triviaData.results[5].question)
-      var questionSeven = (triviaData.results[6].question)
-      var questionEight = (triviaData.results[7].question)
-      var questionNine = (triviaData.results[8].question)
-      var questionTen = (triviaData.results[9].question)
+      var questionOne = JSON.stringify(triviaData.results[0].question)
+      var questionTwo = JSON.stringify(triviaData.results[1].question)
+      var questionThree = JSON.stringify(triviaData.results[2].question)
+      var questionFour = JSON.stringify(triviaData.results[3].question)
+      var questionFive = JSON.stringify(triviaData.results[4].question)
+      var questionSix = JSON.stringify(triviaData.results[5].question)
+      var questionSeven = JSON.stringify(triviaData.results[6].question)
+      var questionEight = JSON.stringify(triviaData.results[7].question)
+      var questionNine = JSON.stringify(triviaData.results[8].question)
+      var questionTen = JSON.stringify(triviaData.results[9].question)
 
 
       //var for answer
@@ -407,7 +423,7 @@ fetch ('https://opentdb.com/api.php?amount=10' + cat + diff + '&type=multiple')
 
               // Ask a question from the array 
     function askQuestion(qindex) {
-      if (questions.length < qnum){
+      if (questions.length <= qnum){
         gameOver();
       }
       else{
@@ -456,7 +472,6 @@ fetch ('https://opentdb.com/api.php?amount=10' + cat + diff + '&type=multiple')
  
 
   //for (var i = 0; i < questions.length; i++) {
-    
   if (buttonClicked === rightAnsOne && qnum === 2 || buttonClicked === rightAnsTwo && qnum === 3 ||buttonClicked === rightAnsThree && qnum === 4 || buttonClicked === rightAnsFour && qnum === 5 || buttonClicked === rightAnsFive && qnum === 6 || buttonClicked === rightAnsSix && qnum === 7 || buttonClicked === rightAnsSeven && qnum === 8 || buttonClicked === rightAnsEight && qnum === 9 || buttonClicked === rightAnsNine && qnum === 10 || buttonClicked === rightAnsTen && qnum === 11  ){
     clearInterval(interval);
     message.hidden = true;
@@ -526,6 +541,23 @@ function timesUp() {
 questionsEl.hidden = true;
 message.hidden = true;
 gifsEl.hidden = false;
+var timeIsUpGif = Math.round(Math.random()*5)
+if (timeIsUpGif === 0) { timeIsUpGifRandom = "hurry-the-f-up" }
+if (timeIsUpGif === 1) { timeIsUpGifRandom = "im-waiting" }
+if (timeIsUpGif === 2) { timeIsUpGifRandom = "any-day-now" }
+if (timeIsUpGif === 3) { timeIsUpGifRandom = "try-again" }
+if (timeIsUpGif === 4) { timeIsUpGifRandom = "please-continue" }
+if (timeIsUpGif === 5) { timeIsUpGifRandom = "to-the-left" }
+  fetch ('https://api.giphy.com/v1/gifs/search?q=' + timeIsUpGifRandom + '&rating=g&api_key=yhspGREo8A4hP2vDCFvpE5d93COdKp5R')
+  .then(function(response) {
+    return response.json()
+    .then(function(timeGif) {
+        let i = Math.floor( Math.random() * 50)
+        var timeGifOne = (timeGif.data[i].images.original.url)
+        timesupGif.setAttribute('src', timeGifOne);               
+        timesupGif.width = "350";
+    })
+  });
 gifsEl.appendChild(timesupGif);
 continueBtn.hidden = false;
 continueBtn.className = "action";
