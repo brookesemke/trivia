@@ -6,7 +6,7 @@ table {
 }
 
 #TR01 {
-  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: 'Anton', sans-serif;
   height: 100px;
   background-color: #d16491;
   color: white;
@@ -14,7 +14,7 @@ table {
 
 #TR01 h1 {
   color: white;
-  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: 'Anton', sans-serif;
   font-size: xx-large;
   line-height: 8px;
   letter-spacing: 1px;
@@ -22,7 +22,7 @@ table {
 
 #TR01 h3 {
   color: white;
-  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: 'Anton', sans-serif;
   font-size: large;
   letter-spacing: 1px;
 }
@@ -33,7 +33,7 @@ table {
 }
 
 #TR02 p {
-  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: 'Anton', sans-serif;
   letter-spacing: 1px;
 }
 
@@ -54,8 +54,9 @@ table {
 #TR05 p {
   margin-top: 10px;
   margin-bottom: 5px;
-  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  font-size: 10px;
+  font-family: 'Anton', sans-serif;
+  font-size: 14px;
+  font-weight: lighter;
 }
 
 #TR06 {
@@ -64,7 +65,7 @@ table {
 }
 
 #TR06 ol li {
-  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: 'Anton', sans-serif;
   font-size: 15px;
   color: white;
   text-align: left;
@@ -77,7 +78,7 @@ table {
 }
 
 #titlebar h3 {
-  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: 'Anton', sans-serif;
   text-align: center;
 }
 
@@ -102,7 +103,7 @@ button {
   width: 100px;
   margin: auto 10px;
   box-shadow: 3px 3px 10px black;
-  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: 'Anton', sans-serif;
   letter-spacing: 1px;
 }
 
@@ -120,7 +121,7 @@ button {
   border-radius: 10px;
   border-width: 2px;
   box-shadow: 3px 3px 10px black;
-  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: 'Anton', sans-serif;
   letter-spacing: 1px;
 }
 
@@ -137,7 +138,7 @@ button {
   width: 100px;
   margin: auto 10px;
   box-shadow: 3px 3px 10px black;
-  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: 'Anton', sans-serif;
   letter-spacing: 1px;
 }
 
@@ -148,7 +149,7 @@ button {
   padding: 20px;
   margin: 10px;
   border-radius: 10px;
-  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: 'Anton', sans-serif;
   letter-spacing: 1px;
   background-color: #e9a46a;
   border:#e68884;
@@ -156,7 +157,7 @@ button {
 }
 
 #question p {
-  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: 'Anton', sans-serif;
   letter-spacing: 1px;
   color: blue;
 }
