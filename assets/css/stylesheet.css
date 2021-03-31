@@ -179,3 +179,22 @@ a {
     opacity: 0;
   }
 }
+
+#logo {
+  text-align: center;
+  background-color: #efccaf;
+}
+
+#rangers {
+  padding: auto;
+  margin-top: 20px;
+}
+
+#welcome, #lets {
+text-align: center;
+background-color: #e68884 ;
+}
+
+#footer {
+  text-align: center;
+}
