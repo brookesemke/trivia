@@ -317,17 +317,52 @@ fetch ('https://opentdb.com/api.php?amount=10' + cat + diff + '&type=multiple')
       //var for question
 
       var questionOne = JSON.stringify(triviaData.results[0].question)
+      var parseOne = questionOne.replace(/&#039;/g, "\'");
+      var questionOne = parseOne.replace(/&quot;/g,"\"" );
+
       var questionTwo = JSON.stringify(triviaData.results[1].question)
+      var parseTwo = questionTwo.replace(/&#039;/g, "\'");
+      var questionTwo = parseTwo.replace(/&quot;/g,"\"" );
+
       var questionThree = JSON.stringify(triviaData.results[2].question)
+      var parseThree = questionThree.replace(/&#039;/g, "\'");
+      var questionThree = parseThree.replace(/&quot;/g,"\"" );
+
       var questionFour = JSON.stringify(triviaData.results[3].question)
+      var parseFour = questionFour.replace(/&#039;/g, "\'");
+      var questionFour = parseFour.replace(/&quot;/g,"\"" );
+
       var questionFive = JSON.stringify(triviaData.results[4].question)
+      var parseFive = questionFive.replace(/&#039;/g, "\'");
+      var questionFive = parseFive.replace(/&quot;/g,"\"" );
+
       var questionSix = JSON.stringify(triviaData.results[5].question)
+      var parseSix = questionSix.replace(/&#039;/g, "\'");
+      var questionSix = parseSix.replace(/&quot;/g,"\"" );
+
       var questionSeven = JSON.stringify(triviaData.results[6].question)
+      var parseSeven = questionSeven.replace(/&#039;/g, "\'");
+      var questionSeven = parseSeven.replace(/&quot;/g,"\"" );
+
       var questionEight = JSON.stringify(triviaData.results[7].question)
+      var parseEight = questionEight.replace(/&#039;/g, "\'");
+      var questionEight = parseEight.replace(/&quot;/g,"\"" );
+
       var questionNine = JSON.stringify(triviaData.results[8].question)
+      var parseNine = questionNine.replace(/&#039;/g, "\'");
+      var questionNine = parseNine.replace(/&quot;/g,"\"" );
+
       var questionTen = JSON.stringify(triviaData.results[9].question)
+      var parseTen = questionTen.replace(/&#039;/g, "\'");
+      var questionTen = parseTen.replace(/&quot;/g,"\"" );
 
-
+      // this script changes Tim Burton&#039;s 1989 movie &quot;Batman&quot;
+      // into: "Tim Burton's 1989 movie "Batman"
+      //var encoded = JSON.stringify(triviaData.results[0].question);
+      //var parseOne = questionOne.replace(/&#039;/g, "\'");
+      //var questionOne = parseSingle.replace(/&quot;/g,"\"" );
+      //console.log(encoded);
+      //console.log(parsedouble);
 
       //var for answer
 
@@ -421,12 +456,6 @@ fetch ('https://opentdb.com/api.php?amount=10' + cat + diff + '&type=multiple')
       { q: questionTen, a: incAnsTen, ca: correctAnsArr },
 
     ];
-
-    var encoded = (triviaData.results[0].question);
-    var parsed = encoded.replace(/&#039;/g, "\'");
-    console.log(encoded);
-    console.log(parsed);
-   
 
     // Ask a question from the array 
     function askQuestion(qindex) {
