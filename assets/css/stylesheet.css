@@ -3,6 +3,10 @@ table {
   border-width: 1px;
 }
 
+body {
+  background-color:#fadadd;
+}
+
 #TR01 {
   font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   height: 100px;
@@ -174,6 +178,11 @@ a {
 .blink {
   animation: blinker 1s linear infinite;
 }
+
+.grid-padding-x>.cell {
+  padding-right: 0rem;
+  padding-left: 0rem;
+
 @keyframes blinker {
   50% {
     opacity: 0;
