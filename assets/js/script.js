@@ -328,6 +328,7 @@ fetch ('https://opentdb.com/api.php?amount=10' + cat + diff + '&type=multiple')
       var questionTen = JSON.stringify(triviaData.results[9].question)
 
 
+
       //var for answer
 
       var answerOne = (triviaData.results[0].correct_answer)
@@ -421,7 +422,13 @@ fetch ('https://opentdb.com/api.php?amount=10' + cat + diff + '&type=multiple')
 
     ];
 
-              // Ask a question from the array 
+    var encoded = (triviaData.results[0].question);
+    var parsed = encoded.replace(/&#039;/g, "\'");
+    console.log(encoded);
+    console.log(parsed);
+   
+
+    // Ask a question from the array 
     function askQuestion(qindex) {
       if (questions.length <= qnum){
         gameOver();
