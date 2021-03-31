@@ -22,7 +22,7 @@ function checkApi() {
            let i = Math.floor( Math.random() * 50)
            var happyGifOne = (happyGif.data[i].images.original.url)
            winnerGif.setAttribute('src', happyGifOne)
-           winnerGif.width = "350";      
+           winnerGif.setAttribute('class','tall380');      
        })
    })
   }
@@ -51,7 +51,7 @@ function checkApi() {
            var sadGifOne = (sadGif.data[i].images.original.url)
            i++;
            loserGif.setAttribute('src', sadGifOne);
-           loserGif.width = "350";
+           loserGif.setAttribute('class','tall380');
        })
    })
   }
@@ -86,7 +86,7 @@ function checkApi() {
            let i = Math.floor( Math.random() * 50)
            var playGifOne = (playGif.data[i].images.original.url)
            welcomeGif.setAttribute('src', playGifOne);               
-           welcomeGif.width = "350";
+           welcomeGif.setAttribute('class','tall380');
        })
    })
 
@@ -98,7 +98,7 @@ function checkApi() {
            let i = Math.floor( Math.random() * 50)
            var chuckGifOne = (chuckGif.data[i].images.original.url)
            resultGif.setAttribute('src', chuckGifOne);               
-           resultGif.width = "350";
+           resultGif.setAttribute('class','tall380');
        })
    })
 
@@ -120,7 +120,7 @@ var qnum = 1;
 // identify the divs in the HTML where we will inserting elements
 var titlebarEl = document.querySelector("#titlebar");
 var countdownEl = document.querySelector("#timer");
-var welcomegifEl = document.querySelector("#welcome");  
+var welcomegifEl = document.querySelector("#welcome");
 var playerformEl = document.querySelector("#playerform"); 
 var questionsEl = document.querySelector("#questions");
 var gifsEl = document.querySelector("#gifs");
@@ -169,10 +169,10 @@ rulesBtn.textContent = "Rules";
 rulesBtn.addEventListener("click", function () {
   window.location='rules.html';
 });
-playBtn.textContent = "Play";
-startBtn.textContent = "Start";
-continueBtn.textContent = "Next";
-finishBtn.textContent = "Finish";
+playBtn.textContent = "PLAY";
+startBtn.textContent = "START!";
+continueBtn.textContent = "NEXT";
+finishBtn.textContent = "FINISH";
 
 // nameEl.placeholder = "Tell us your name and style"; // name gathering placed on hold for v1.0
 questionOption1.value = "0";
@@ -199,6 +199,7 @@ welcomegifEl.appendChild(welcomeGif);
 function welcome() {
 titleEl.textContent = "LET'S PLAY A GAME!";
 playerformEl.hidden = true;
+questionsEl.innerHTML = "";
 questionsEl.hidden = true;
 startBtn.className = "hidden";
 continueBtn.className = "hidden";
@@ -454,7 +455,8 @@ fetch ('https://opentdb.com/api.php?amount=10' + cat + diff + '&type=multiple')
 
     // Ask a question from the array 
     function askQuestion(qindex) {
-      if (questions.length <= qnum){
+      if (questions.length < qnum){
+        resultsEl.hidden = false;
         gameOver();
       }
       else{
@@ -466,22 +468,28 @@ fetch ('https://opentdb.com/api.php?amount=10' + cat + diff + '&type=multiple')
       titleEl.textContent = "Question "+ qnum;
       qnum++;
       startTimer();
+      gifsEl.innerHTML = "";
       }
     }
 
     askQuestion(qindex);
 
     continueBtn.addEventListener("click", function () {
+      winnerGif.setAttribute('src','assets/img/loading.gif');
+      loserGif.setAttribute('src','assets/img/loading.gif');
+      timesupGif.setAttribute('src','assets/img/loading.gif');
+      resultsEl.hidden = true;
+      gifsEl.hidden = true;
+      gifsEl.innerHTML = "";
       questionsEl.hidden = false;
       continueBtn.hidden = true;
-      gifsEl.innerHTML ="";
       qindex++;
       askQuestion(qindex);
       
   })
   
 
-   // Check answers
+  // Check answers
   questionsEl.addEventListener("click", function (event) {
   if (event.target.matches(".answer")) {
   var buttonClicked = event.target.value;
@@ -505,25 +513,32 @@ fetch ('https://opentdb.com/api.php?amount=10' + cat + diff + '&type=multiple')
   //for (var i = 0; i < questions.length; i++) {
   if (buttonClicked === rightAnsOne && qnum === 2 || buttonClicked === rightAnsTwo && qnum === 3 ||buttonClicked === rightAnsThree && qnum === 4 || buttonClicked === rightAnsFour && qnum === 5 || buttonClicked === rightAnsFive && qnum === 6 || buttonClicked === rightAnsSix && qnum === 7 || buttonClicked === rightAnsSeven && qnum === 8 || buttonClicked === rightAnsEight && qnum === 9 || buttonClicked === rightAnsNine && qnum === 10 || buttonClicked === rightAnsTen && qnum === 11  ){
     clearInterval(interval);
+    resultsEl.appendChild(result);
+    result.textContent = "YUP";
+    resultsEl.hidden = false;
+    gifsEl.innerHTML = "";
     message.hidden = true;
     secondsLeft = 10;
     questionsEl.hidden = true;
-    gifsEl.hidden = false;
-    gifsEl.innerHTML = " ";
     makeHappy();
     gifsEl.appendChild(winnerGif);
+    gifsEl.hidden = false;
     continueBtn.hidden = false;
     continueBtn.className = "action";
     score++;
   }
   else {
     clearInterval(interval);
+    resultsEl.appendChild(result);
+    result.textContent = "NOUP";
+    resultsEl.hidden = false;
+    gifsEl.innerHTML = "";
     message.hidden = true;
     secondsLeft = 10;
     questionsEl.hidden = true;
-    gifsEl.hidden = false;
     makeSad();
     gifsEl.appendChild(loserGif);
+    gifsEl.hidden = false;
     continueBtn.hidden = false;
     continueBtn.className = "action";
   }
@@ -586,7 +601,7 @@ if (timeIsUpGif === 5) { timeIsUpGifRandom = "to-the-left" }
         let i = Math.floor( Math.random() * 50)
         var timeGifOne = (timeGif.data[i].images.original.url)
         timesupGif.setAttribute('src', timeGifOne);               
-        timesupGif.width = "350";
+        timesupGif.setAttribute('class','tall380');
     })
   });
 gifsEl.appendChild(timesupGif);

@@ -5,6 +5,11 @@ table {
   border-width: 1px;
 }
 
+.tall380 {
+  max-height: 270px;
+  width: 380px;
+}
+
 #TR01 {
   font-family: 'Anton', sans-serif;
   height: 100px;
@@ -28,7 +33,7 @@ table {
 }
 
 #TR02 {
-  height: 50px;
+  height: 30px;
   background-color: #d16491;
 }
 
@@ -39,6 +44,12 @@ table {
 
 #TR03 {
   background-color: #e889ae;
+  font-family: 'Anton', sans-serif;
+  font-weight: 100;
+  font-size: x-large;
+  letter-spacing: 1px;
+  height:380px;
+  overflow: hidden;
 }
 
 #TR04 {
@@ -171,6 +182,8 @@ button {
 }
 .blink {
   animation: blinker 1s linear infinite;
+  font-family: 'Anton', sans-serif;
+  font-size: large;
 }
 @keyframes blinker {
   50% {
