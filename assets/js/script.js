@@ -1,7 +1,7 @@
 function checkApi() {   
  
   function makeHappy() {
-   fetch ('https://api.giphy.com/v1/gifs/search?q=happy&rating=g&api_key=yhspGREo8A4hP2vDCFvpE5d93COdKp5R')
+   fetch ('https://api.giphy.com/v1/gifs/search?q=yes&rating=g&api_key=yhspGREo8A4hP2vDCFvpE5d93COdKp5R')
 
    .then(function(response) {
        return response.json()
@@ -17,7 +17,7 @@ function checkApi() {
   }
 
   function makeSad() {
-   fetch ('https://api.giphy.com/v1/gifs/search?q=sad&rating=g&api_key=yhspGREo8A4hP2vDCFvpE5d93COdKp5R')
+   fetch ('https://api.giphy.com/v1/gifs/search?q=wrong&rating=g&api_key=yhspGREo8A4hP2vDCFvpE5d93COdKp5R')
 
    .then(function(response) {
        return response.json()
