@@ -213,7 +213,8 @@ startBtn.className = "hidden";
 continueBtn.className = "hidden";
 var refreshLinkEl = document.createElement("a");
 refreshLinkEl.setAttribute("href", "game.html");
-refreshLinkEl.className = "notsure";
+refreshLinkEl.setAttribute("id", "notsure");
+refreshLinkEl.textContent = "NOT SURE?"
 resultsEl.appendChild(refreshLinkEl);
 resultsEl.hidden = false;
 }
