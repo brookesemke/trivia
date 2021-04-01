@@ -1,3 +1,7 @@
+body {
+  background-color:#fadadd;
+}
+
 table {
   width: 400px;
   height: 600px; 
@@ -189,4 +193,8 @@ button {
   50% {
     opacity: 0;
   }
+}
+.grid-padding-x>.cell {
+  padding-right: 0rem;
+  padding-left: 0rem;
 }
