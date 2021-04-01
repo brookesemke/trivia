@@ -2,15 +2,17 @@ function checkApi() {
  
   function makeHappy() {
     
-    var happyGif = Math.floor(Math.random()*7)
+    var happyGif = Math.floor(Math.random()*9)
     if (happyGif === 0) { happyGifRandom = "winner-winner-chicken-dinner" }
     if (happyGif === 1) { happyGifRandom = "we-are-the-champions" }
     if (happyGif === 2) { happyGifRandom = "go-girl" }
     if (happyGif === 3) { happyGifRandom = "who-da-man" }
-    if (happyGif === 4) { happyGifRandom = "what-what" }
+    if (happyGif === 4) { happyGifRandom = "celebration" }
     if (happyGif === 5) { happyGifRandom = "boo-ya" }
     if (happyGif === 6) { happyGifRandom = "fo-sho" }
     if (happyGif === 7) { happyGifRandom = "you-da-bomb" }
+    if (happyGif === 8) { happyGifRandom = "well-done" }
+    if (happyGif === 9) { happyGifRandom = "good-job" }
 
    fetch ('https://api.giphy.com/v1/gifs/search?q=' + happyGifRandom + '&rating=g&api_key=yhspGREo8A4hP2vDCFvpE5d93COdKp5R')
 
@@ -31,15 +33,15 @@ function checkApi() {
 
     var sadGif = Math.round(Math.random()*9)
     if (sadGif === 0) { sadGifRandom = "epic-fail" }
-    if (sadGif === 1) { sadGifRandom = "loooser" }
+    if (sadGif === 1) { sadGifRandom = "loser" }
     if (sadGif === 2) { sadGifRandom = "slimed" }
-    if (sadGif === 3) { sadGifRandom = "better-luck-next-time" }
-    if (sadGif === 4) { sadGifRandom = "KO" }
-    if (sadGif === 5) { sadGifRandom = "OMG" }
+    if (sadGif === 3) { sadGifRandom = "thumbs-down" }
+    if (sadGif === 4) { sadGifRandom = "not-really" }
+    if (sadGif === 5) { sadGifRandom = "OMG-no" }
     if (sadGif === 6) { sadGifRandom = "oh-no" }
     if (sadGif === 7) { sadGifRandom = "you-wish" }
     if (sadGif === 8) { sadGifRandom = "you-stupid" }
-    if (sadGif === 9) { sadGifRandom = "but-why" }
+    if (sadGif === 9) { sadGifRandom = "no" }
 
    fetch ('https://api.giphy.com/v1/gifs/search?q=' + sadGifRandom + '&rating=g&api_key=yhspGREo8A4hP2vDCFvpE5d93COdKp5R')
 
@@ -70,11 +72,17 @@ function checkApi() {
        })
    })
 */
-      var welcomeGifA = Math.round(Math.random()*3)
+      var welcomeGifA = Math.round(Math.random()*9)
         if (welcomeGifA === 0) { welcomeGifRandom = "knowledge" }
         if (welcomeGifA === 1) { welcomeGifRandom = "on-your-mark" }
         if (welcomeGifA === 2) { welcomeGifRandom = "lets-go" }
         if (welcomeGifA === 3) { welcomeGifRandom = "you-got-this" }
+        if (welcomeGifA === 4) { welcomeGifRandom = "think-about-it" }
+        if (welcomeGifA === 5) { welcomeGifRandom = "calculating" }
+        if (welcomeGifA === 6) { welcomeGifRandom = "bring-it-on" }
+        if (welcomeGifA === 7) { welcomeGifRandom = "lets-do-it" }
+        if (welcomeGifA === 8) { welcomeGifRandom = "get-ready" }
+        if (welcomeGifA === 9) { welcomeGifRandom = "press-start" }
     console.log(welcomeGifA)
 
 
@@ -165,12 +173,12 @@ questionOption3.className = "answer";
 questionOption4.className = "answer";
 
 // add texts and values
-rulesBtn.textContent = "Rules";
+rulesBtn.textContent = "RULES!";
 rulesBtn.addEventListener("click", function () {
   window.location='rules.html';
 });
-playBtn.textContent = "PLAY";
-startBtn.textContent = "START!";
+playBtn.textContent = "START!";
+startBtn.textContent = "LET'S GO!";
 continueBtn.textContent = "NEXT";
 finishBtn.textContent = "FINISH";
 
@@ -203,6 +211,11 @@ questionsEl.innerHTML = "";
 questionsEl.hidden = true;
 startBtn.className = "hidden";
 continueBtn.className = "hidden";
+var refreshLinkEl = document.createElement("a");
+refreshLinkEl.setAttribute("href", "game.html");
+refreshLinkEl.className = "notsure";
+resultsEl.appendChild(refreshLinkEl);
+resultsEl.hidden = false;
 }
 
 welcome();
@@ -215,6 +228,8 @@ playBtn.className = "hidden";
 startBtn.className = "action";
 welcomegifEl.hidden = true;
 playerformEl.hidden = false;
+resultsEl.innerHTML ="";
+resultsEl.hidden = true;
 
 var topicsEl = document.createElement("select")
 var levelsEl = document.createElement("select")
@@ -603,7 +618,7 @@ if (timeIsUpGif === 0) { timeIsUpGifRandom = "hurry-the-f-up" }
 if (timeIsUpGif === 1) { timeIsUpGifRandom = "im-waiting" }
 if (timeIsUpGif === 2) { timeIsUpGifRandom = "any-day-now" }
 if (timeIsUpGif === 3) { timeIsUpGifRandom = "try-again" }
-if (timeIsUpGif === 4) { timeIsUpGifRandom = "please-continue" }
+if (timeIsUpGif === 4) { timeIsUpGifRandom = "too-late" }
 if (timeIsUpGif === 5) { timeIsUpGifRandom = "to-the-left" }
   fetch ('https://api.giphy.com/v1/gifs/search?q=' + timeIsUpGifRandom + '&rating=g&api_key=yhspGREo8A4hP2vDCFvpE5d93COdKp5R')
   .then(function(response) {

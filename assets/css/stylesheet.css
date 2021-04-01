@@ -19,6 +19,7 @@ table {
   height: 100px;
   background-color: #d16491;
   color: white;
+  vertical-align: top;
 }
 
 #TR01 h1 {
@@ -37,8 +38,8 @@ table {
 }
 
 #TR02 {
-  height: 30px;
   background-color: #d16491;
+  height: 25px;
 }
 
 #TR02 p {
@@ -52,18 +53,18 @@ table {
   font-weight: 100;
   font-size: x-large;
   letter-spacing: 1px;
-  height:380px;
+  height: 350px;
   overflow: hidden;
 }
 
 #TR04 {
   background-color: #e889ae;
-  height: 75px;
+  height: 100px;
 }
 
 #TR05 {
   background-color: #e889ae;
-  height: 30px;
+  height: 25px;
 }
 
 #TR05 p {
@@ -76,7 +77,7 @@ table {
 
 #TR06 {
   background-color: #e889ae;
-  height: 30px;
+  height: 225px;
 }
 
 #TR06 ol li {
@@ -121,8 +122,6 @@ button {
   font-family: 'Anton', sans-serif;
   letter-spacing: 1px;
 }
-
-
 
 .answer {
   background-color: #e1a7c0;
@@ -197,4 +196,71 @@ button {
 .grid-padding-x>.cell {
   padding-right: 0rem;
   padding-left: 0rem;
+}
+
+.rulestitle p {
+  color: black;
+  font-family: 'Anton', sans-serif;
+  font-size:medium;
+  letter-spacing: 1px;
+}
+
+#logo {
+  text-align: center;
+  background-color: #d16491;
+}
+
+#rangers {
+  padding: auto;
+  margin-top: 20px;
+}
+
+#welcome, #lets #footer {
+text-align: center;
+background-color: #e889ae ;
+font-family: 'Anton', sans-serif;
+color: white;
+}
+
+#footer {
+  padding-top: 40px;
+  text-align: center;
+  background-color: #d16491;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-family: 'Anton', sans-serif;
+  font-size: 14px;
+  font-weight: lighter;
+}
+
+#warning-button {
+  background-color: #e9a46a;
+  border:#e68884;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 10px;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  font-size: 16px;
+  width: 350px;
+  margin: auto 10px;
+  box-shadow: 3px 3px 10px black;
+  font-family: 'Anton', sans-serif;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+}
+
+.card-section h4 {
+  color: black;
+  font-family: 'Anton', sans-serif;
+  font-size: x-large;
+  letter-spacing: 1px;
+}
+
+.card-section p {
+  color: black;
+  font-family: 'Anton', sans-serif;
+  font-size:medium;
+  letter-spacing: 1px;
 }
