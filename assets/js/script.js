@@ -321,86 +321,68 @@ fetch ('https://opentdb.com/api.php?amount=10' + cat + diff + '&type=multiple')
       //var for question
 
       var questionOne = JSON.stringify(triviaData.results[0].question)
-      var parseOne = questionOne.replace(/&#039;/g, "\'").replace(/&amp;/g, "&");
-      var questionOne = parseOne.replace(/&quot;/g,"\"" ).replace(/&amp;/g, "&");
-
+      var questionOne = questionOne.replace(/&quot;/g,"\"" ).replace(/&#039;/g, "\'").replace(/&amp;/g, "&").replace(/&ldquo;/g, "\"").replace(/&rdquo;/g, "\"");
+      
       var questionTwo = JSON.stringify(triviaData.results[1].question)
-      var parseTwo = questionTwo.replace(/&#039;/g, "\'").replace(/&amp;/g, "&");
-      var questionTwo = parseTwo.replace(/&quot;/g,"\"" ).replace(/&amp;/g, "&");
-
+      var questionTwo = questionTwo.replace(/&quot;/g,"\"" ).replace(/&#039;/g, "\'").replace(/&amp;/g, "&").replace(/&ldquo;/g, "\"").replace(/&rdquo;/g, "\"");
+      
       var questionThree = JSON.stringify(triviaData.results[2].question)
-      var parseThree = questionThree.replace(/&#039;/g, "\'").replace(/&amp;/g, "&");
-      var questionThree = parseThree.replace(/&quot;/g,"\"" ).replace(/&amp;/g, "&");
-
+      var questionThree = questionThree.replace(/&quot;/g,"\"" ).replace(/&#039;/g, "\'").replace(/&amp;/g, "&").replace(/&ldquo;/g, "\"").replace(/&rdquo;/g, "\"");
+      
       var questionFour = JSON.stringify(triviaData.results[3].question)
-      var parseFour = questionFour.replace(/&#039;/g, "\'").replace(/&amp;/g, "&");
-      var questionFour = parseFour.replace(/&quot;/g,"\"" ).replace(/&amp;/g, "&");
-
+      var questionFour = questionFour.replace(/&quot;/g,"\"" ).replace(/&#039;/g, "\'").replace(/&amp;/g, "&").replace(/&ldquo;/g, "\"").replace(/&rdquo;/g, "\"");
+      
       var questionFive = JSON.stringify(triviaData.results[4].question)
-      var parseFive = questionFive.replace(/&#039;/g, "\'").replace(/&amp;/g, "&");
-      var questionFive = parseFive.replace(/&quot;/g,"\"" ).replace(/&amp;/g, "&");
-
+      var questionFive = questionFive.replace(/&quot;/g,"\"" ).replace(/&#039;/g, "\'").replace(/&amp;/g, "&").replace(/&ldquo;/g, "\"").replace(/&rdquo;/g, "\"");
+      
       var questionSix = JSON.stringify(triviaData.results[5].question)
-      var parseSix = questionSix.replace(/&#039;/g, "\'").replace(/&amp;/g, "&");
-      var questionSix = parseSix.replace(/&quot;/g,"\"" ).replace(/&amp;/g, "&");
-
+      var questionSix = questionSix.replace(/&quot;/g,"\"" ).replace(/&#039;/g, "\'").replace(/&amp;/g, "&").replace(/&ldquo;/g, "\"").replace(/&rdquo;/g, "\"");
+      
       var questionSeven = JSON.stringify(triviaData.results[6].question)
-      var parseSeven = questionSeven.replace(/&#039;/g, "\'").replace(/&amp;/g, "&");
-      var questionSeven = parseSeven.replace(/&quot;/g,"\"" ).replace(/&amp;/g, "&");
-
+      var questionSeven = questionSeven.replace(/&quot;/g,"\"" ).replace(/&#039;/g, "\'").replace(/&amp;/g, "&").replace(/&ldquo;/g, "\"").replace(/&rdquo;/g, "\"");
+      
       var questionEight = JSON.stringify(triviaData.results[7].question)
-      var parseEight = questionEight.replace(/&#039;/g, "\'").replace(/&amp;/g, "&");
-      var questionEight = parseEight.replace(/&quot;/g,"\"" ).replace(/&amp;/g, "&");
-
+      var questionEight = questionEight.replace(/&quot;/g,"\"" ).replace(/&#039;/g, "\'").replace(/&amp;/g, "&").replace(/&ldquo;/g, "\"").replace(/&rdquo;/g, "\"");
+      
       var questionNine = JSON.stringify(triviaData.results[8].question)
-      var parseNine = questionNine.replace(/&#039;/g, "\'").replace(/&amp;/g, "&");
-      var questionNine = parseNine.replace(/&quot;/g,"\"" ).replace(/&amp;/g, "&");
-
+      var questionNine = questionNine.replace(/&quot;/g,"\"" ).replace(/&#039;/g, "\'").replace(/&amp;/g, "&").replace(/&ldquo;/g, "\"").replace(/&rdquo;/g, "\"");
+      
       var questionTen = JSON.stringify(triviaData.results[9].question)
-      var parseTen = questionTen.replace(/&#039;/g, "\'").replace(/&amp;/g, "&");
-      var questionTen = parseTen.replace(/&quot;/g,"\"" ).replace(/&amp;/g, "&");
+      var questionTen = questionTen.replace(/&quot;/g,"\"" ).replace(/&#039;/g, "\'").replace(/&amp;/g, "&").replace(/&ldquo;/g, "\"").replace(/&rdquo;/g, "\"");
+      
 
-      //var for answer
+      //var for answer sans unicode
 
       var answerOne = JSON.stringify(triviaData.results[0].correct_answer)
-      var answerParseOne = answerOne.replace(/&#039;/g, "\'").replace(/&amp;/g, "&");
-      var answerOne = answerParseOne.replace(/&quot;/g,"\"" ).replace(/&amp;/g, "&");
+      var answerOne = answerOne.replace(/&quot;/g,"\"" ).replace(/&#039;/g, "\'").replace(/&amp;/g, "&").replace(/&ldquo;/g, "\"").replace(/&rdquo;/g, "\"");
       
       var answerTwo = (triviaData.results[1].correct_answer)
-      var answerParseTwo = answerTwo.replace(/&#039;/g, "\'").replace(/&amp;/g, "&");
-      var answerTwo = answerParseTwo.replace(/&quot;/g,"\"" ).replace(/&amp;/g, "&");
+      var answerTwo = answerTwo.replace(/&quot;/g,"\"" ).replace(/&#039;/g, "\'").replace(/&amp;/g, "&").replace(/&ldquo;/g, "\"").replace(/&rdquo;/g, "\"");
       
       var answerThree = (triviaData.results[2].correct_answer)
-      var answerParseThree = answerThree.replace(/&#039;/g, "\'").replace(/&amp;/g, "&");
-      var answerThree = answerParseThree.replace(/&quot;/g,"\"" ).replace(/&amp;/g, "&");
-
+      var answerThree = answerThree.replace(/&quot;/g,"\"" ).replace(/&#039;/g, "\'").replace(/&amp;/g, "&").replace(/&ldquo;/g, "\"").replace(/&rdquo;/g, "\"");
+      
       var answerFour = (triviaData.results[3].correct_answer)
-      var answerParseFour = answerFour.replace(/&#039;/g, "\'").replace(/&amp;/g, "&");
-      var answerFour = answerParseFour.replace(/&quot;/g,"\"" ).replace(/&amp;/g, "&");
-
+      var answerFour = answerFour.replace(/&quot;/g,"\"" ).replace(/&#039;/g, "\'").replace(/&amp;/g, "&").replace(/&ldquo;/g, "\"").replace(/&rdquo;/g, "\"");
+      
       var answerFive = (triviaData.results[4].correct_answer)
-      var answerParseFive = answerFive.replace(/&#039;/g, "\'").replace(/&amp;/g, "&");
-      var answerFive = answerParseFive.replace(/&quot;/g,"\"" ).replace(/&amp;/g, "&");
-
+      var answerFive = answerFive.replace(/&quot;/g,"\"" ).replace(/&#039;/g, "\'").replace(/&amp;/g, "&").replace(/&ldquo;/g, "\"").replace(/&rdquo;/g, "\"");
+      
       var answerSix = (triviaData.results[5].correct_answer)
-      var answerParseSix = answerSix.replace(/&#039;/g, "\'").replace(/&amp;/g, "&");
-      var answerSix = answerParseSix.replace(/&quot;/g,"\"" ).replace(/&amp;/g, "&");
-
+      var answerSix = answerSix.replace(/&quot;/g,"\"" ).replace(/&#039;/g, "\'").replace(/&amp;/g, "&").replace(/&ldquo;/g, "\"").replace(/&rdquo;/g, "\"");
+      
       var answerSeven = (triviaData.results[6].correct_answer)
-      var answerParseSeven = answerSeven.replace(/&#039;/g, "\'").replace(/&amp;/g, "&");
-      var answerSeven = answerParseSeven.replace(/&quot;/g,"\"" ).replace(/&amp;/g, "&");
+      var answerSeven = answerSeven.replace(/&quot;/g,"\"" ).replace(/&#039;/g, "\'").replace(/&amp;/g, "&").replace(/&ldquo;/g, "\"").replace(/&rdquo;/g, "\"");
 
       var answerEight = (triviaData.results[7].correct_answer)
-      var answerParseEight = answerEight.replace(/&#039;/g, "\'").replace(/&amp;/g, "&");
-      var answerEight = answerParseEight.replace(/&quot;/g,"\"" ).replace(/&amp;/g, "&");
-
+      var answerEight = answerEight.replace(/&quot;/g,"\"" ).replace(/&#039;/g, "\'").replace(/&amp;/g, "&").replace(/&ldquo;/g, "\"").replace(/&rdquo;/g, "\"");
+      
       var answerNine = (triviaData.results[8].correct_answer)
-      var answerParseNine = answerNine.replace(/&#039;/g, "\'").replace(/&amp;/g, "&");
-      var answerNine = answerParseNine.replace(/&quot;/g,"\"" ).replace(/&amp;/g, "&");
-
+      var answerNine = answerNine.replace(/&quot;/g,"\"" ).replace(/&#039;/g, "\'").replace(/&amp;/g, "&").replace(/&ldquo;/g, "\"").replace(/&rdquo;/g, "\"");
+      
       var answerTen = (triviaData.results[9].correct_answer)
-      var answerParseTen = answerTen.replace(/&#039;/g, "\'").replace(/&amp;/g, "&");
-      var answerTen = answerParseTen.replace(/&quot;/g,"\"" );
+      var answerTen = answerTen.replace(/&quot;/g,"\"" ).replace(/&#039;/g, "\'").replace(/&amp;/g, "&").replace(/&ldquo;/g, "\"").replace(/&rdquo;/g, "\"");
+      
       
 
       //var for difficulty
