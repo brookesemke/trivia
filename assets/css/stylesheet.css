@@ -2,6 +2,7 @@ body {
   background-color:#fadadd;
 }
 
+/* Main container */
 table {
   width: 400px;
   height: 600px; 
@@ -9,6 +10,7 @@ table {
   border-width: 1px;
 }
 
+/* Main Images */
 .tall380 {
   max-height: 270px;
   width: 380px;
@@ -139,6 +141,8 @@ button {
   letter-spacing: 1px;
 }
 
+/* Toggle classes to show and hide some buttons */
+
 .action {
   background-color: #e9a46a;
   border:#e68884;
@@ -154,6 +158,14 @@ button {
   box-shadow: 3px 3px 10px black;
   font-family: 'Anton', sans-serif;
   letter-spacing: 1px;
+}
+
+.hidden {
+  visibility: hidden;
+  width: 0px;
+  height: 0px;
+  margin: 0px;
+  padding: 0px;
 }
 
 .playerform {
@@ -176,13 +188,8 @@ button {
   color: blue;
 }
 
-.hidden {
-  visibility: hidden;
-  width: 0px;
-  height: 0px;
-  margin: 0px;
-  padding: 0px;
-}
+/* For the HURRY HURRY HURRY! message */
+
 .blink {
   animation: blinker 1s linear infinite;
   font-family: 'Anton', sans-serif;
@@ -193,12 +200,15 @@ button {
     opacity: 0;
   }
 }
+
+/* Toggle classes to show and hide some buttons */
+
 .grid-padding-x>.cell {
   padding-right: 0rem;
   padding-left: 0rem;
 }
 
-.rulestitle p {
+.rulestitle {
   color: black;
   font-family: 'Anton', sans-serif;
   font-size:medium;
