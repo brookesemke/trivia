@@ -10,6 +10,8 @@ If the player answers the question within the allotted amount of time, the app d
 
 Before starting the game, user is shown a welcome screen introducing the team behind Riddle Me This...
 
+Link to the Project Slides: https://docs.google.com/presentation/d/1h-sg0LD2CI221s6LEwcL8q-LH5bX6YbAP4mCF3-04Sc/edit?usp=sharing
+
 ## Live App
 https://brookesemke.github.io/trivia/
 
