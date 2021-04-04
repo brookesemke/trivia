@@ -191,9 +191,18 @@ function checkApi() {
     var refreshLinkEl = document.createElement("a");
     refreshLinkEl.setAttribute("href", "game.html");
     refreshLinkEl.setAttribute("id", "notsure");
-    refreshLinkEl.textContent = "NOT SURE?"
+    console.log(score);
     resultsEl.appendChild(refreshLinkEl);
     resultsEl.hidden = false;
+
+    // Show Previous Score or Question 
+    var previousScore = localStorage.getItem("previousScore");
+    if (!previousScore) {
+      refreshLinkEl.textContent = "NOT SURE?";
+    }
+    else {
+      refreshLinkEl.textContent = "Your previous score was " + previousScore;
+    }
   }
 
   welcome();
@@ -610,6 +619,7 @@ function checkApi() {
   function gameOver() {
     resultsEl.appendChild(result);
     result.textContent = "Your score was " + score
+    localStorage.setItem("previousScore", score);
     resultsEl.appendChild(resultGif);
     questionsEl.hidden = true;
     message.hidden = true;
