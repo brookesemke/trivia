@@ -191,7 +191,6 @@ function checkApi() {
     var refreshLinkEl = document.createElement("a");
     refreshLinkEl.setAttribute("href", "game.html");
     refreshLinkEl.setAttribute("id", "notsure");
-    console.log(score);
     resultsEl.appendChild(refreshLinkEl);
     resultsEl.hidden = false;
 
@@ -203,6 +202,7 @@ function checkApi() {
     else {
       refreshLinkEl.textContent = "Your previous score was " + previousScore;
     }
+    
   }
 
   welcome();
